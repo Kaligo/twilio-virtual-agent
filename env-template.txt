@@ -1,0 +1,6 @@
+# OpenAI Configuration Template
+# Copy this content to a file named ".env" in this directory
+# Then replace "your-openai-api-key-here" with your actual OpenAI API key
+
+OPENAI_API_KEY=your-openai-api-key-here
+OPENAI_MODEL=gpt-3.5-turbo 

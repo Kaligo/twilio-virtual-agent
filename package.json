@@ -1,0 +1,31 @@
+{
+  "name": "twilio-virtual-agent",
+  "version": "1.0.0",
+  "description": "A Twilio serverless virtual agent powered by OpenAI for voice calls",
+  "main": "index.js",
+  "scripts": {
+    "start": "twilio-run",
+    "deploy": "twilio serverless:deploy --override-existing-project",
+    "dev": "twilio-run --live",
+    "logs": "twilio serverless:logs --service-sid ZSc40977817f55f8bdc3c5501924d1a2bb --environment dev --tail"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "openai": "^4.20.1"
+  },
+  "devDependencies": {
+    "twilio-run": "^3.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "twilio",
+    "serverless",
+    "openai",
+    "virtual-agent",
+    "voice"
+  ],
+  "author": "",
+  "license": "MIT"
+}
