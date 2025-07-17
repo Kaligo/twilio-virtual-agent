@@ -1,13 +1,15 @@
 # Twilio Virtual Agent
 
-A serverless virtual agent powered by OpenAI that handles voice calls through Twilio. The agent provides intelligent, conversational responses using custom prompts and knowledge base data, with optional call recording capabilities.
+A serverless virtual agent powered by OpenAI that handles voice calls through Twilio. The agent provides intelligent, conversational responses using custom prompts and knowledge base data, with conversation history tracking and optional call recording capabilities.
 
 ## Features
 
 - 🤖 **AI-Powered Conversations**: Uses OpenAI GPT models for natural language understanding and response generation
 - 📞 **Voice Interaction**: Handles incoming voice calls with speech-to-text and text-to-speech
+- 💬 **Conversation History**: Maintains context within each call session (up to 10 exchanges)
 - 🎙️ **Call Recording**: Optional dual-channel recording for conversation analysis
 - 🎯 **Customizable Content**: Load custom prompts and knowledge base from project files
+- 🧪 **Local Testing**: Built-in tools for testing AI responses without making actual calls
 - ⚡ **Fast Response**: 1-second speech detection for quick conversation flow
 - ☁️ **Serverless**: Runs on Twilio's serverless platform for automatic scaling
 
@@ -16,15 +18,17 @@ A serverless virtual agent powered by OpenAI that handles voice calls through Tw
 ```
 twilio-virtual-agent/
 ├── functions/
-│   ├── voice-handler.js                    # Main voice call handler
+│   ├── voice-handler.js                    # Main voice call handler (with conversation history)
 │   ├── start-recording-and-continue.js     # Recording initiation handler
 │   └── recording-handler.js                # Recording status webhook
 ├── assets/
 │   ├── prompts/
-│   │   ├── system-prompt.txt               # AI system prompt
+│   │   ├── system-prompt.txt               # AI system prompt (loyalty program context)
 │   │   └── welcome-message.txt             # Call greeting message
 │   └── data/
-│       └── knowledge-base.json             # Static data for responses
+│       └── knowledge-base.json             # FAQ and user data for responses
+├── test-ai-response.js                     # Interactive local testing tool
+├── test-openai-key.js                      # OpenAI API key validation tool
 ├── package.json                            # Dependencies and scripts
 ├── env-template.txt                        # Environment variable template
 └── README.md                              # This file
@@ -70,15 +74,39 @@ OPENAI_MODEL=gpt-3.5-turbo
 ### 5. Customize Your Agent
 
 #### System Prompt
-Edit `assets/prompts/system-prompt.txt` to customize how your AI agent behaves and responds.
+Edit `assets/prompts/system-prompt.txt` to customize how your AI agent behaves and responds. The current prompt is configured for a loyalty program customer service context with user verification capabilities.
 
 #### Welcome Message
 Modify `assets/prompts/welcome-message.txt` to change the greeting callers hear.
 
 #### Knowledge Base
-Update `assets/data/knowledge-base.json` with your company information, services, and FAQ data.
+Update `assets/data/knowledge-base.json` with your FAQ data and user information. The current structure includes:
+- **FAQ sections**: Organized by topics (e.g., "Earning and Managing Points")
+- **User data**: For identity verification and account lookup
+- **Partner information**: For loyalty program transfers and redemptions
 
-### 6. Deploy to Twilio
+### 6. Local Testing
+
+Before deploying, test your AI agent locally:
+
+#### Test OpenAI Connection
+```bash
+node test-openai-key.js
+```
+
+#### Interactive AI Testing
+```bash
+npm run try-conversation
+```
+
+The interactive testing tool allows you to:
+- Test AI responses in a conversational format
+- Verify conversation history is working
+- Test different user inputs and scenarios
+- Clear conversation history between tests
+- Exit with `/quit` or `/exit`
+
+### 7. Deploy to Twilio
 
 ```bash
 npm run deploy
@@ -87,7 +115,7 @@ npm run deploy
 After deployment, note the function URL:
 `https://your-service-xxxx-dev.twil.io/voice-handler`
 
-### 7. Configure Twilio Phone Number
+### 8. Configure Twilio Phone Number
 
 1. Log into the Twilio Console
 2. Go to Phone Numbers > Manage > Active numbers
@@ -103,9 +131,18 @@ After deployment, note the function URL:
 1. **Initial Call**: Welcome message plays immediately
 2. **Recording Start**: After 1-second delay, conversation recording begins (if eligible)
 3. **User Input**: Caller speaks their question or request
-4. **AI Processing**: OpenAI generates intelligent response based on prompts and knowledge base
+4. **AI Processing**: OpenAI generates intelligent response based on prompts, knowledge base, and conversation history
 5. **Response**: AI agent responds with natural voice
-6. **Continue**: Conversation continues until timeout or goodbye
+6. **Continue**: Conversation continues with full context until timeout or goodbye
+
+### Conversation History
+
+The system maintains conversation context within each call:
+
+- **Session Memory**: Remembers up to 10 exchanges (20 messages) per call
+- **Context Awareness**: AI responses consider previous conversation turns
+- **Automatic Management**: History is automatically trimmed to avoid token limits
+- **Session Scope**: History resets between different calls
 
 ### Call Recording
 
@@ -127,15 +164,30 @@ The system automatically attempts to record conversations:
 
 ### Available Scripts
 - `npm run deploy` - Deploy to Twilio serverless
+- `npm run try-conversation` - Test AI responses locally
 - `npm run logs` - View live function logs (if configured)
+- `node test-openai-key.js` - Validate OpenAI API configuration
+
+### Local Testing Tips
+- Use `test-openai-key.js` to verify API connection before deployment
+- Use `test-ai-response.js` for interactive conversation testing
+- Test different scenarios including user verification flows
+- Verify conversation history is maintained correctly
 
 ### Debugging Tips
 - Check Twilio Console for call logs and errors
 - Monitor OpenAI usage in OpenAI dashboard
 - Test with your phone number before going live
 - Review function logs for recording status
+- Use local testing tools to debug AI responses
 
 ## Technical Details
+
+### Conversation History Implementation
+- Stored in-memory for the duration of each call session
+- Limited to 10 exchanges (20 messages) to manage token usage
+- Includes both user inputs and AI responses
+- Automatically passed to OpenAI for context-aware responses
 
 ### Call Recording Implementation
 - Uses Twilio REST API for call recording
@@ -146,7 +198,7 @@ The system automatically attempts to record conversations:
 ### AI Integration
 - **Model**: GPT-3.5-turbo (configurable)
 - **Temperature**: 0.3 for consistent responses
-- **Context**: Combines system prompts with knowledge base data
+- **Context**: Combines system prompts, knowledge base data, and conversation history
 - **Response Optimization**: Tailored for voice conversation length
 
 ### Error Handling
@@ -162,37 +214,66 @@ The system automatically attempts to record conversations:
 - Regularly rotate API keys
 - Monitor usage to prevent unexpected charges
 - Consider call recording compliance requirements
+- Protect user data in knowledge base appropriately
 
 ## Cost Considerations
 
 - **Twilio Voice**: Charges per minute for incoming calls
 - **Call Recording**: Additional charge per recording (~$0.0025)
-- **OpenAI API**: Charges per token for AI responses
+- **OpenAI API**: Charges per token for AI responses (conversation history increases token usage)
 - **Serverless Functions**: Included in most Twilio plans
 
 ## Customization Examples
 
-### Modify AI Behavior
+### Modify AI Behavior for Loyalty Program
 Edit `assets/prompts/system-prompt.txt`:
 ```
-You are a helpful customer service agent for [Company Name]. 
-Always be polite, professional, and concise in your responses.
-If you don't know something, offer to connect the caller with a human agent.
+You are a helpful and professional virtual assistant handling phone calls from loyalty program customers.
+- Always verify user identity before discussing account details
+- Ask for phone number or email for verification
+- Use the knowledge base to look up user information and points balances
+- Keep responses brief and conversational for voice interaction
 ```
 
-### Add Company Information
+### Add User Data for Verification
 Update `assets/data/knowledge-base.json`:
 ```json
-[
-  {
-    "question": "What are your business hours?",
-    "answer": "We're open Monday-Friday 9AM-5PM EST"
-  },
-  {
-    "question": "How can I contact support?",
-    "answer": "You can call this number or email support@company.com"
-  }
-]
+{
+  "users": [
+    {
+      "id": "user123",
+      "email": "customer@example.com",
+      "phone": "+1234567890",
+      "pointsAccounts": [
+        {
+          "id": "points123",
+          "balance": 15000,
+          "tier": "Gold"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "topic": "Points Balance",
+      "question": "How do I check my points balance?",
+      "answer": "I can help you check your balance after verifying your identity."
+    }
+  ]
+}
+```
+
+### Update FAQ Content
+```json
+{
+  "faq": [
+    {
+      "topic": "Account Management",
+      "question": "How do I update my account information?",
+      "answer": "You can update your information through our website or by calling customer service."
+    }
+  ]
+}
 ```
 
 ## Contributing
@@ -200,7 +281,7 @@ Update `assets/data/knowledge-base.json`:
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test thoroughly with test calls
+4. Test thoroughly with local testing tools and test calls
 5. Submit a pull request
 
 ## License
