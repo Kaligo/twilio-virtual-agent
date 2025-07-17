@@ -1,31 +1,33 @@
 # Twilio Virtual Agent
 
-A serverless virtual agent powered by OpenAI that handles voice calls through Twilio. The agent uses custom prompts and knowledge base data to provide intelligent, conversational responses to callers.
+A serverless virtual agent powered by OpenAI that handles voice calls through Twilio. The agent provides intelligent, conversational responses using custom prompts and knowledge base data, with optional call recording capabilities.
 
 ## Features
 
-- 🤖 **AI-Powered**: Uses OpenAI GPT models for natural language understanding and response generation
+- 🤖 **AI-Powered Conversations**: Uses OpenAI GPT models for natural language understanding and response generation
 - 📞 **Voice Interaction**: Handles incoming voice calls with speech-to-text and text-to-speech
-- 🎯 **Customizable**: Load custom prompts and knowledge base from project files
-- ☁️ **Serverless**: Runs on Twilio's serverless platform for automatic scaling
+- 🎙️ **Call Recording**: Optional dual-channel recording for conversation analysis
+- 🎯 **Customizable Content**: Load custom prompts and knowledge base from project files
 - ⚡ **Fast Response**: 1-second speech detection for quick conversation flow
-- 🔧 **Simple Setup**: Minimal configuration required
+- ☁️ **Serverless**: Runs on Twilio's serverless platform for automatic scaling
 
 ## Project Structure
 
 ```
 twilio-virtual-agent/
 ├── functions/
-│   └── voice-handler.js          # Main voice call handler
+│   ├── voice-handler.js                    # Main voice call handler
+│   ├── start-recording-and-continue.js     # Recording initiation handler
+│   └── recording-handler.js                # Recording status webhook
 ├── assets/
 │   ├── prompts/
-│   │   ├── system-prompt.txt      # AI system prompt
-│   │   └── welcome-message.txt    # Call greeting message
+│   │   ├── system-prompt.txt               # AI system prompt
+│   │   └── welcome-message.txt             # Call greeting message
 │   └── data/
-│       └── knowledge-base.json    # Static data for responses
-├── package.json                   # Dependencies and scripts
-├── env-template.txt              # Environment variable template
-└── README.md                     # This file
+│       └── knowledge-base.json             # Static data for responses
+├── package.json                            # Dependencies and scripts
+├── env-template.txt                        # Environment variable template
+└── README.md                              # This file
 ```
 
 ## Setup Instructions
@@ -82,7 +84,7 @@ Update `assets/data/knowledge-base.json` with your company information, services
 npm run deploy
 ```
 
-After deployment, note the function URL. It will look like:
+After deployment, note the function URL:
 `https://your-service-xxxx-dev.twil.io/voice-handler`
 
 ### 7. Configure Twilio Phone Number
@@ -96,74 +98,109 @@ After deployment, note the function URL. It will look like:
 
 ## Usage
 
-Once configured, callers can:
+### Call Flow
 
-1. Call your Twilio phone number
-2. Hear the welcome message
-3. Speak their question or request
-4. Receive AI-generated responses based on your prompts and knowledge base
-5. Continue the conversation naturally
-6. Call automatically ends after 60 seconds of inactivity
+1. **Initial Call**: Welcome message plays immediately
+2. **Recording Start**: After 1-second delay, conversation recording begins (if eligible)
+3. **User Input**: Caller speaks their question or request
+4. **AI Processing**: OpenAI generates intelligent response based on prompts and knowledge base
+5. **Response**: AI agent responds with natural voice
+6. **Continue**: Conversation continues until timeout or goodbye
+
+### Call Recording
+
+The system automatically attempts to record conversations:
+
+- **Dual-channel recording**: Customer and agent voices in separate audio channels
+- **Graceful fallback**: Conversation continues normally if recording fails
+- **Recording URL**: Provided via webhook when recording completes
+- **Format**: WAV format with dual audio channels
 
 ## Voice Configuration
 
-The agent uses Amazon Polly's Joanna voice by default for natural-sounding responses. The voice is optimized for:
-- Clear pronunciation
-- Natural conversation flow
-- Fast response times (1-second speech detection)
-
-## Conversation Settings
-
-The agent is configured with:
-- **Speech Timeout**: 60 seconds (auto-hangup if no input)
-- **Speech End Detection**: 1 second (fast response)
-- **AI Model**: GPT-3.5-turbo (configurable)
-- **Response Length**: ~50 tokens (optimized for voice)
-- **Temperature**: 0.3 (consistent responses)
-
-## Customization Tips
-
-### Enhanced Prompts
-- Make prompts specific to your use case
-- Include examples of good responses
-- Set clear boundaries for what the agent should/shouldn't do
-- Keep responses brief for voice conversations
-
-### Knowledge Base Structure
-- Organize data logically by topics
-- Keep information concise for voice responses
-- Include common questions and their answers
-- Use JSON format for easy parsing
-
-### Response Optimization
-- Test with various speech inputs
-- Monitor call logs for conversation quality
-- Adjust system prompts based on user feedback
+- **Voice**: Amazon Polly's Joanna voice for natural-sounding responses
+- **Speech Detection**: 1-second end-of-speech detection for fast responses
+- **Call Timeout**: 60 seconds of inactivity before auto-hangup
+- **Response Length**: Optimized ~50 tokens for voice conversations
 
 ## Monitoring and Debugging
 
 ### Available Scripts
-- `npm run deploy` - Deploy to Twilio
-- `npm run logs` - View live function logs
+- `npm run deploy` - Deploy to Twilio serverless
+- `npm run logs` - View live function logs (if configured)
 
 ### Debugging Tips
 - Check Twilio Console for call logs and errors
-- Monitor OpenAI usage in the OpenAI dashboard
+- Monitor OpenAI usage in OpenAI dashboard
 - Test with your phone number before going live
+- Review function logs for recording status
 
-## Security Notes
+## Technical Details
+
+### Call Recording Implementation
+- Uses Twilio REST API for call recording
+- Starts recording after welcome message with 1-second delay
+- Dual-channel format captures both caller and agent audio
+- Recording status updates via webhook to `/recording-handler`
+
+### AI Integration
+- **Model**: GPT-3.5-turbo (configurable)
+- **Temperature**: 0.3 for consistent responses
+- **Context**: Combines system prompts with knowledge base data
+- **Response Optimization**: Tailored for voice conversation length
+
+### Error Handling
+- Graceful fallback when OpenAI API is unavailable
+- Continues conversation when recording fails
+- Comprehensive logging for debugging
+- Automatic timeout handling
+
+## Security Considerations
 
 - Never commit `.env` files to version control
-- Use Twilio's environment variable management for production
+- Use Twilio environment variables for production deployment
 - Regularly rotate API keys
 - Monitor usage to prevent unexpected charges
+- Consider call recording compliance requirements
+
+## Cost Considerations
+
+- **Twilio Voice**: Charges per minute for incoming calls
+- **Call Recording**: Additional charge per recording (~$0.0025)
+- **OpenAI API**: Charges per token for AI responses
+- **Serverless Functions**: Included in most Twilio plans
+
+## Customization Examples
+
+### Modify AI Behavior
+Edit `assets/prompts/system-prompt.txt`:
+```
+You are a helpful customer service agent for [Company Name]. 
+Always be polite, professional, and concise in your responses.
+If you don't know something, offer to connect the caller with a human agent.
+```
+
+### Add Company Information
+Update `assets/data/knowledge-base.json`:
+```json
+[
+  {
+    "question": "What are your business hours?",
+    "answer": "We're open Monday-Friday 9AM-5PM EST"
+  },
+  {
+    "question": "How can I contact support?",
+    "answer": "You can call this number or email support@company.com"
+  }
+]
+```
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test thoroughly
+4. Test thoroughly with test calls
 5. Submit a pull request
 
 ## License

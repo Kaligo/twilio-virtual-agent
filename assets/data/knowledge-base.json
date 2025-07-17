@@ -1,10 +1,364 @@
-[
-  {
-    "question": "How do I reset my password?",
-    "answer": "To reset your password, click 'Forgot Password' on the login page and follow the instructions."
-  },
-  {
-    "question": "What are your business hours?",
-    "answer": "Our business hours are Monday to Friday, 9am to 5pm UTC."
-  }
-]
+{
+  "faq": [
+    {
+      "topic": "Earning and Managing Points",
+      "question": "Where can I use  Rewards Points ?",
+      "answer": "Points can be used on the site for various redemption purposes."
+    },
+    {
+      "topic": "Frequent traveller programs",
+      "question": "How long does it take to transfer Rewards Points?",
+      "answer": "The time needed to process a transfer varies for each partner. Some partners offer instant transfers, while others may take several days. The estimated transfer time is shown when you select a specific partner on the various redemption page.   Please note that in some exceptional cases, transfers may take up to 15 business days to process if your chosen partner needs to conduct a more detailed review of your request.   Please note that points cannot be cancelled, reversed, refunded or exchanged regardless of the transfer status once transfer has been initiated?"
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "How do I know the status of my transfer?",
+      "answer": "You will receive an email status update regarding your transfer. Initially, your transfer status will show as ‘Pending’, which means we are currently processing the request with your selected partner. Once the transfer status is shown as ‘Successful’, your transferred points have been deposited in your partner loyalty program account and are ready for you to use. In case the transfer status is shown as ‘Unsuccessful’, you may have entered an incorrect partner membership number or your name does not match the partner loyalty program account. Please update your details and re-attempt your transfer. Should you encounter repeated rejections, please inquire with our rewards service team via the Contact Us form in the rewards portal header to request assistance."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "Where can I find the products and conversion rates available for transfer?",
+      "answer": "You can view the list of partners and their respective conversion rates on the product’s menu option"
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "Where can I find my Rewards Points balance?",
+      "answer": "Rewards Points balance can be found by clicking on the button located at the top right corner with your initials in desktop view and the top left for mobile."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "How can I review the points redemption activity on my account?",
+      "answer": "Click on the button located at the top right corner with your initials in desktop view and the top left for mobile. Next, click on Points Activity. Under My Rewards Summary, you can easily review your points transaction history on your account and filter the points history as desired."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "What are the different Offers provided?",
+      "answer": "Depending on your CbaDemoRcUs Rewards, Offer type provided can be found in your navigation. Where Card Linked Offers allow you to earn points by making a purchase with participating merchants on your  CbaDemoRcUs Rewards card. While Affiliate Offers which are only available online allow you to earn points when you purchase with a participating merchant through a specific affiliate link. It requires you to start your shopping journey within the CbaDemoRcUs Rewards. You will need to click through the “Shop now” button on your Offer details page to the store for your order to be tracked and points to be earned."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "Why are there no Offers in my city?",
+      "answer": "Offers are currently only available within US. If you can’t find offers in your city, please check the larger metropolitan areas nearest you. We’re continuously expanding our selection of offers, so watch this space and look out for our online offers."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "How do returns, exchanges and/or backorders affect the points earned for the purchase?",
+      "answer": "If any part of a qualifying transaction is returned to the retailer or is not completed, your points for that transaction may be reduced or removed from your CbaDemoRcUs Rewards account."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "When will I receive my points?",
+      "answer": "You will receive points typically within 120 days after the qualified transaction has been processed, and points will be automatically added to your account. If you do not receive points within this timeframe, please contact us directly via the help center."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "How much does it cost to join Offers?",
+      "answer": "Your CbaDemoRcUs Rewards account is automatically enrolled in the program, and it's free to start saving with CbaDemoRcUs Rewards."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "How do I activate offers?",
+      "answer": "<ol><li>Offers without an activation button have already been made available to you by CbaDemoRcUs Rewards.</li><li>If you see an activation button on an offer, you’ll need to activate it by clicking on it before purchasing with the merchant. Clicking the activation button will also activate the offer.<li>When the offer has been activated, the activation button will be disabled. If you activate the offer after the purchase has been completed, it will not qualify for a cash back reward.</li></ol>"
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "How many points do I get?",
+      "answer": "CbaDemoRcUs Rewards merchants offer points for a qualifying purchase. The reward amount depends on the offer which has been activated, and it’s usually equal to a percentage of your purchase or a flat point amount if your purchase meets or exceeds a minimum amount. Additional offers may be available for activities like shopping on certain days of the week or making multiple purchases. You will earn points for all offers you are eligible for, subject to reward maximums set by a merchant. Be sure to review the offer details for each participating merchant."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "What are some tips to ensure I can earn points?",
+      "answer": "<ol><li>Always review the terms and conditions of products which are eligible to earn bonus points</li><li>Ensure any ad blockers that might be installed on the browser are disabled</li><li>Avoid using promo codes, coupons, or store credits when making a purchase</li><li>Avoid manually editing the URL when making a purchase</li><li>Complete the purchase within the same session</li></ol>"
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "How do I identify CbaDemoRcUs Rewards merchants?",
+      "answer": "Visit CbaDemoRcUs Rewards to browse participating merchants. When you make qualified purchases using your enrolled card at participating merchants, CbaDemoRcUs Rewards will monitor the transactions for eligibility to earn rewards. Participating merchants and offers can change at any time so be sure to visit CbaDemoRcUs Rewards often to see what’s new."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "Is there a limit to the number of offers from which I can earn points through CbaDemoRcUs Rewards?",
+      "answer": "No, there is no limit to the number of offers you can partake in or activate simultaneously. Please refer to the CbaDemoRcUs Rewards for information regarding eligible purchases for each merchant."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "How do I verify my points have been posted to my CbaDemoRcUs Rewards account?",
+      "answer": "Visit Points Activity on your CbaDemoRcUs Rewards."
+    },
+    {
+      "topic": "Earning and Managing Points",
+      "question": "Are Ascenda's decisions on award points final?",
+      "answer": "Yes, Ascenda's decisions regarding award points are considered final. Once a decision has been made regarding the allocation or adjustment of award points, it is not subject to further review or appeal. We strive to ensure fairness and consistency in our award points allocation processes, but please note that our decisions are ultimately binding. If you have any questions or concerns regarding your award points, please feel free to reach out to our customer support team for assistance."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How do I change or cancel a flight booking that I have made?",
+      "answer": "1. Once your booking has been confirmed, any cancellations or changes will\nbe subject to the booking policy at the time of reservation. Cancellation or changes\nare also subject to applicable airline fare conditions, along with an administrative\nfee of AUD 70 administrative\nfee. You may request for a cancellation or change through the help center.\n2. Flights booked to, from, or within the United States are eligible for free cancellation if they're canceled within 24 hours of booking and the departure date is at least seven days away."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How long does it take to transfer Rewards Points to carbon offset?",
+      "answer": "Transfers to carbon offset happen instantaneously."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "My booking was unsuccessful, but funds were deducted from my account. What should I do next?",
+      "answer": "If the booking was unsuccessful, any amount deducted from your credit/debit card will be credited back between 1-10 business days and your Rewards Points will be refunded immediately."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How will I know if my booking has been successfully changed?",
+      "answer": "Once your booking has been successfully changed, an email confirmation will be sent to the email address you specified at the point of your booking. You may also view the updated booking in My Rewards. Rates and availability quoted are not guaranteed unless the booking change is confirmed."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I choose which passenger and email would receive the booking email?",
+      "answer": "Yes, by filling up in the contact details section during the trip checkout process."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "I received an error when making my booking, what should I do next?",
+      "answer": "Please try again shortly. If you're still having issues, do contact support through the help center."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How can I find my trip details after booking?",
+      "answer": "You will be able to view all your redemption history under “My Rewards” and for successful bookings, you can find your travel details under “View trip details”."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I make a travel booking for the same day or next day?",
+      "answer": "Flights bookings must be made at least 2 days in advance."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Why am I charged a cancellation fee when the airline is already charging a cancellation fee?",
+      "answer": "As the booking was made on this platform, the non-waivable cancellation fee by CbaDemoRcUs Rewards covers the administrative process of assisting your booking cancellation with the relevant airline"
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I cancel my digital gift card redemption and receive a refund?",
+      "answer": "No, all digital gift card redemptions are non-refundable. Changes and refunds are not permitted."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "I have booked on CbaDemoRcUs Rewards. What are the taxes and fees stated on my receipt?",
+      "answer": "<p>The taxes and fees stated on your receipt are to recover what CbaDemoRcUs Rewards pays to the hotel in connection with your reservation for taxes owed by the hotel including, but not limited to, sales and use tax, occupancy tax, room tax, excise tax, value-added tax and/or other similar taxes.</p>         <p>In certain locations, the tax amount may also include government-imposed service fees or other fees not paid directly to the taxing authorities but required by law to be collected by the hotel. The amount paid to the hotel in connection with your reservation for taxes may vary from the amount estimated and included in the charge to you.</p>         <p>CbaDemoRcUs Rewards does not collect or remit taxes directly to any taxing authorities in connection with your booking. Ascenda’s hotel suppliers include all applicable taxes in the amount billed to Ascenda and Ascenda pays such amounts directly to the suppliers.</p>         <p>The taxability and the applicable tax rates vary greatly by location. Please be advised that certain cities charge additional taxes and fees (e.g. city tax, resort fees, etc.) that are not included in the rate and are payable to the hotel directly. If you have any queries or require any clarifications relating to such taxes and fees, please contact directly via the help center.</p>"
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Why am I not able to make a hotel booking?",
+      "answer": "Hotel redemption is unavailable in this trial version."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Will I receive a physical card when I make a digital gift card redemption?",
+      "answer": "No, all our digital gift cards are electronic vouchers and issued instantly upon redemption. The electronic vouchers are sent to the email address provided during redemption, this can be your email address or the address of your nominated recipient."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "When will my digital gift card expire?",
+      "answer": "Each gift card has a different expiration date and some gift cards do not expire. You will be able to see the gift card expiration date in the electronic vouchers sent via email."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "When I redeem Rewards Points  for USDC cryptocurrency tokens, how will I receive this redemption?",
+      "answer": "Your converted USDC cryptocurrency tokens will be deposited in the crypto wallet you have indicated on the checkout page."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "What if I have indicated the wrong crypto wallet?",
+      "answer": "All crypto transfers are non refundable."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "When I redeem Rewards Points  for cash, how will I receive this redemption?",
+      "answer": "If you do have an existing PayPal account and have indicate the same email address on the checkout page, you should receive an email notification informing you that it has been credited into your account and you may login to your PayPal account to retrieve it. If you do not have an existing PayPal account, an email will be sent to the same email address you have indicated on the checkout page informing you to sign up for a PayPal account before you are able to login to your PayPal account and retrieve it. In the event that you do not have a PayPal account and have made a cash redemption via PayPal and did not sign up for a PayPal account using the same email within 30 days, your redemption will be refunded."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How can I transfer my Rewards Points?",
+      "answer": "You can easily transfer your points online via the Rewards Portal. Simply navigate to any of the available products from the home page and select your preferred partner. Please note that transfers can only be made online, and cannot be requested over the phone."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How long does it take to transfer Rewards Points to USDC cryptocurrency tokens?",
+      "answer": "Cryptocurrency transfers to your digital wallet will take an hour to fulfil."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How long does it take to credit cash through PayPal?",
+      "answer": "Cash credit through PayPal should happen instantaneously."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "When I claim Uber vouchers/credits, how will I receive this redemption?",
+      "answer": "<p>Suppose you have an existing Uber account and have indicated the same email address on the checkout page. In that case, the voucher will be automatically credited to your Uber account which can view online or in app. You will also receive an email from Uber notifying you of the addition of the credit amount and expiry date. There is no activation required.</p> <p>If you do not have an existing Uber account, an email will be sent to the same email address you have indicated on the checkout page informing you to sign up for an Uber account before you can log in to your Uber account and retrieve it.</p> <p>If you do not have an Uber account and have made a redemption for Uber and did not sign up for an Uber account using the same email within the expiry date, your redemption will be forfeited.</p>"
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I cancel my Uber redemption and receive a refund?",
+      "answer": "No, all Uber redemptions are non-refundable. Changes and refunds are not permitted."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How long does it take to transfer Rewards Points to Uber?",
+      "answer": "If you have claimed a voucher but it didn't apply to your trip or order via the Uber app, you should contact Support via the Uber or Uber Eats app or on <a target=\"_blank\" href=\"https://help.uber.com\">help.uber.com</a>."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "What happens if I put the wrong email address in my Uber redemption?",
+      "answer": "It is the responsibility of the customer to input the correct email address for the transfer and also review this on the final review page before proceeding with the transfer."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Where can I use my Uber vouchers/credits?",
+      "answer": "You must use the Uber app or Uber Eats app to redeem and use your vouchers. If you don't have an Uber account, you'll be prompted to create one."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How long is my Uber voucher valid for?",
+      "answer": "Your voucher is valid for one year from the point of transferring your bank points into an Uber voucher."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "What if the Uber vouchers/credits currency does not match my Uber account currency?",
+      "answer": "The voucher amount will be converted to your Uber account currency after it is applied to your Uber account."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I request more than one Uber voucher?",
+      "answer": "Yes, you can request more than one voucher/credit into your account, another transaction will need to be completed to obtain the next voucher. Each voucher/credit will appear separately under the Vouchers section in your Uber wallet. The order in which the voucher is applied will be by expiry date."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How do I check how much of my Uber voucher is remaining?",
+      "answer": "The credit amount will be visible under the Vouchers section in your Uber wallet."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "What if I don't want to use my Uber voucher on a specific transaction?",
+      "answer": "Users can toggle between the payment method they would like to use and at the check-out screen / ride confirmation screen can change this to their preferred method of payment (e.g. credit card)."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Uber doesn't operate in my home country - can I use this in other Uber markets?",
+      "answer": "<p>Yes, you can use the Uber voucher in all countries Uber is operating, see <a target=\"_blank\" href=\"https://www.uber.com/global/en/cities/\">here</a> for Uber and <a target=\"_blank\" href=\"https://www.ubereats.com/location\">here</a> for UberEats.</p>"
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I gift my Uber voucher to another person?",
+      "answer": "No, while you cannot gift a voucher to another person, you can send an Uber Eats delivery to their address or reserve an Uber ride for them using your account."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I transfer the Uber vouchers/credits into cash to my bank account?",
+      "answer": "No, Uber vouchers/credits cannot be sold, transferred, exchanged or converted to cash."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How much will Uber charge me for using my Uber vouchers/credits?",
+      "answer": "<p>A voucher will be automatically applied to applicable trips or meals at the checkout page. If the value of a meal or a ride exceeds the voucher/credit available in the user's wallet, the user's nominated card payment method will be charged the outstanding amount.</p> <p>If the amount of the order is less than the voucher/credit value, then the balance remaining will be available for the next order or ride, provided this is within the voucher/credit's expiry date.</p> <p>For full terms and conditions, please refer to Uber's Voucher terms and conditions <a target=\"_blank\" href=\"https://www.uber.com/legal/en/document/?country=united-states&lang=en&name=uber-for-business-product-addendum---vouchers\">here</a>.</p>"
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I make a booking for the same day or the next day?",
+      "answer": "Booking for car rentals must be made at least 2 days in advance."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How do I make payment for a booking on the portal?",
+      "answer": "You can pay the cash portion with a credit or debit card, or use a combination of points and card. For car rentals, you may apply your points to cover up to the full booking amount."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I combine my points with someone else’s points for a booking?",
+      "answer": "No, only the points in your own CbaDemoRcUs Rewards account can be used to make a booking."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How do I know if my points have been successfully debited?",
+      "answer": "You will be informed of the successful debiting of points via email, in the form of a car reservation booking confirmation. You may also check your point balance via your account under ‘Points Activity’."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How can I find my booking details on the travel portal?",
+      "answer": "After logging in, you can view your booking details under ‘My Rewards.’ A confirmation email will also be sent to the specified email address for each successful booking."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can special requests be accommodated by car rental agencies?",
+      "answer": "Yes, you can add special requests (e.g., child seat, GPS) on the checkout page when finalizing your booking. These requests will be sent directly to the car rental agency, but please note they are subject to availability and cannot be guaranteed."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Will I receive a confirmation directly from the car rental agency?",
+      "answer": "No. Your booking confirmation is all that is needed. It contains your itinerary details, booking reference and all other important details for your car pick-up."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Are bookings confirmed with the car rental agency instantly?",
+      "answer": "If you have received a confirmation email with your itinerary and reference number, your booking is confirmed. However, car rental operators may load reservations into their systems at varying times, so the agency’s staff might only see your booking a few days before your pick-up date. Please keep this in mind if you reach out to the car rental agency directly."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Can I change my payment method after booking a car rental (cash to points, or vice versa) on the travel portal?",
+      "answer": "Your payment method cannot be changed once your booking has been confirmed."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "My booking was unsuccessful, but funds were deducted from my credit card. What should I do?",
+      "answer": "If the booking was unsuccessful, any amount deducted from your credit/debit card will automatically be credited back within 12-17 working days, and any points used will be refunded immediately."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "I would like to cancel my car booking. Will I get a refund for the cancellation?",
+      "answer": "Kindly contact our customer service team at rewardscentral@support.ascenda.com for cancellations. \nYour eligibility for any refund depends on the terms and conditions of your booking. If you are eligible, the refundable amount will be refunded in the proportion of cash and points which you used to pay for your booking. A service fee of AUD 35 and 5% of the refundable amount applies. The 5% fee does not apply to payments made entirely using points.\nAdditional cancellation fees charged by Ascenda and/or the car rental company will be deducted from the cash portion and refunded to you. If the refundable cash portion is insufficient for the deduction of the additional cancellation fees, you will be required to make a separate payment."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Why am I charged a cancellation fee by Ascenda when the car rental company is already charging a cancellation fee?",
+      "answer": "As the booking was made on this platform, the non-waivable cancellation fee by Ascenda covers the administrative process of assisting your booking cancellation with the relevant car rental company."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "How do I pay for the additional charges due to a cancellation of my booking?",
+      "answer": "When Ascenda receives your request for a booking change or cancellation, a payment link with the invoice for any additional charges will be sent to the email address provided during booking. You will need to make a manual payment for the cancellation or booking change fee via the payment link using a credit or debit card."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Why is the cancellation fee not automatically charged to the card used for payment during booking?",
+      "answer": "We are not authorized to charge your card directly. Therefore, any additional payment resulting from a reservation cancellation will require a separate payment. Ascenda's customer service team will send you a payment link via email to complete this transaction."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Where can I pick up/drop off the car?",
+      "answer": "All the details regarding your car rental, including the pick-up and drop-off locations, operator contact number, and policies, can be found in your confirmation email."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "Will I have to leave a deposit when I pick my car up?",
+      "answer": "Yes, a deposit may be required at the counter to cover any potential damage or theft during your rental. The deposit amount will be temporarily held or charged to the main driver’s credit card for the duration of the rental. If the car is returned undamaged, the deposit will be refunded within 30-60 days.\nKindly note that if the main driver’s credit card does not have sufficient available funds for the deposit, you may not be allowed to take the car, or the counter staff may require you to purchase additional insurance. This is standard practice with all car rental companies"
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "What do I need to bring when picking up the car?",
+      "answer": "When picking up your car, you’ll need the following:\n\n• **Driver's license:** The main driver's license should have been held for at least 1 or 2 years (depending on the rental company's policy). Additional drivers must also present their licenses. If your driver's license is not in English characters (e.g., Arabic, Greek, Chinese), you’ll need to bring an international driving permit along with the original license. Specific requirements may vary by rental supplier.\n\n• **Credit card:** A valid credit card in the name of the main driver with sufficient funds must be presented at the rental desk for deposit pre-authorization or charge.\n\n• **Valid ID:** A valid photo ID (passport, national ID, driver's license, etc.) must be shown to the car rental company. Requirements may vary depending on the rental supplier."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "What additional charges may apply to my booking?",
+      "answer": "Please be aware that each car rental agent has its policies regarding additional charges, which will be clearly stated in the rental conditions at the time of booking.\nCommon additional charges may include fees for out-of-hours pick-ups and drop-offs, border crossings, one-way rentals, driver age, or winterization. Any such charges will need to be paid directly at the rental desk in the local currency.”"
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "What is the \"no show\" policy?",
+      "answer": "Situations generally considered as a 'no-show' may include the following:\n1. Failure to notify the car rental company to cancel the reservation before the scheduled pick-up time.\n2. Failure to pick up the car on the reserved date and time.\n3. Failure to present the necessary documents that meet the requirements at the time of pick-up.\n4. Failure to provide the main driver’s credit card with sufficient available limit.\nIn these cases, the car rental company reserves the right to refuse car pick-up and will no refunds will be issued."
+    },
+    {
+      "topic": "Redeeming Points",
+      "question": "What is the cancellation and amendment policy for cars?",
+      "answer": "1. Cancellations made at least 72 hours before pick-up will be entitled to a refund.  Please note that an administrative fee of AUD 35 and 5% of the refundable amount applies. The 5% fee does not apply to payments made entirely using points. \n2. Cancellations made less than 72 hours before pick-up are non-refundable and cannot be modified.\n3. Existing bookings cannot be modified. If changes are needed, we recommend canceling and rebooking. Please note that cancellations made at least 72 hours before pick-up are eligible for a refund, minus administrative fees. Any new bookings will be subject to current pricing and availability.\nIf you’d like to cancel your booking, please reach out to our customer support team at rewardscentral@support.ascenda.com."
+    }
+  ]
+}

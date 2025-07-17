@@ -5,18 +5,10 @@ exports.handler = async function(context, event, callback) {
     const twiml = new Twilio.twiml.VoiceResponse();
     
     try {
-        console.log('Voice handler called:', JSON.stringify(event, null, 2));
-        
         // Get environment variables
         const openaiApiKey = context.OPENAI_API_KEY;
         const speechTimeout = parseInt(context.SPEECH_TIMEOUT) || 60;
         const speechEndTimeout = parseInt(context.SPEECH_END_TIMEOUT) || 1;
-        
-        console.log('Environment check:', {
-            hasOpenAIKey: !!openaiApiKey,
-            speechTimeout: speechTimeout + 's',
-            speechEndTimeout: speechEndTimeout + 's'
-        });
         
         // Check if OpenAI API key is available
         if (!openaiApiKey) {
@@ -34,15 +26,18 @@ exports.handler = async function(context, event, callback) {
             apiKey: openaiApiKey,
         });
         
-        // Check if this is the initial call or a response to a Gather
+        // Check what type of input we received
         const speechResult = event.SpeechResult;
         const confidence = event.Confidence;
         
-        console.log('Speech detection:', { speechResult, confidence });
+        // More robust initial call detection - only true for very first call
+        const isInitialCall = !speechResult && 
+                              !event.Digits && 
+                              event.CallStatus === 'ringing';
         
         if (speechResult) {
             // User has spoken - process with OpenAI
-            console.log(`User said: ${speechResult} (Confidence: ${confidence})`);
+            console.log(`User input received (Confidence: ${confidence})`);
             
             // Generate response using OpenAI
             const aiResponse = await generateAIResponse(
@@ -51,7 +46,7 @@ exports.handler = async function(context, event, callback) {
                 context
             );
             
-            console.log('AI Response generated:', aiResponse);
+            console.log('AI response generated successfully');
             
             // Provide the response and continue conversation
             twiml.say({
@@ -74,14 +69,30 @@ exports.handler = async function(context, event, callback) {
                 language: 'en-US'
             }, 'Thank you for calling. Goodbye!');
             
+        } else if (isInitialCall) {
+            // True initial call - welcome message with delayed recording
+            console.log('Initial call - starting welcome sequence');
+            
+            // Welcome message (starts immediately)
+            twiml.say({
+                voice: 'Polly.Joanna',
+                language: 'en-US'
+            }, 'Hello! I am your virtual assistant.');
+            
+            // Small pause to let call stabilize
+            twiml.pause({ length: 1 });
+            
+            // Start recording after delay using a redirect to ensure timing
+            twiml.redirect('/start-recording-and-continue');
+            
         } else {
-            // Initial call - this works for you
-            console.log('Initial call or no speech detected');
+            // Any other case - continue conversation without repeating welcome
+            console.log('Continuing conversation flow');
             
             twiml.say({
                 voice: 'Polly.Joanna',
                 language: 'en-US'
-            }, 'Hello! I am your virtual assistant. Please tell me how I can help you.');
+            }, 'Please tell me how I can help you.');
             
             // Gather for speech input
             twiml.gather({
@@ -106,7 +117,6 @@ exports.handler = async function(context, event, callback) {
         }, 'An error occurred');
     }
     
-    console.log('TwiML Response:', twiml.toString());
     callback(null, twiml);
 };
 
