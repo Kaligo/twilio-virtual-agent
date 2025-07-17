@@ -7,7 +7,8 @@
     "start": "twilio-run",
     "deploy": "twilio serverless:deploy --override-existing-project",
     "dev": "twilio-run --live",
-    "logs": "twilio serverless:logs --service-sid ZSc40977817f55f8bdc3c5501924d1a2bb --environment dev --tail"
+    "logs": "twilio serverless:logs --service-sid ZSc40977817f55f8bdc3c5501924d1a2bb --environment dev --tail",
+    "try-conversation": "node test-ai-response.js"
   },
   "dependencies": {
     "dotenv": "^17.2.0",
