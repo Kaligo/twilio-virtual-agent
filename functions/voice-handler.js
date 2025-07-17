@@ -1,5 +1,8 @@
 const { OpenAI } = require('openai');
 
+// Simple conversation history for current session
+let conversationHistory = [];
+
 exports.handler = async function(context, event, callback) {
     // Create TwiML response object
     const twiml = new Twilio.twiml.VoiceResponse();
@@ -39,14 +42,30 @@ exports.handler = async function(context, event, callback) {
             // User has spoken - process with OpenAI
             console.log(`User input received (Confidence: ${confidence})`);
             
-            // Generate response using OpenAI
+            // Generate response using OpenAI with conversation history
             const aiResponse = await generateAIResponse(
                 openai, 
                 speechResult,
-                context
+                context,
+                conversationHistory
             );
             
-            console.log('AI response generated successfully');
+            // Update conversation history
+            conversationHistory.push({
+                role: 'user',
+                content: speechResult
+            });
+            conversationHistory.push({
+                role: 'assistant',
+                content: aiResponse
+            });
+            
+            // Limit conversation history to last 10 exchanges (20 messages) to avoid token limits
+            if (conversationHistory.length > 20) {
+                conversationHistory = conversationHistory.slice(-20);
+            }
+            
+            console.log(`AI response generated successfully (${conversationHistory.length / 2} exchanges remembered)`);
             
             // Provide the response and continue conversation
             twiml.say({
@@ -121,7 +140,7 @@ exports.handler = async function(context, event, callback) {
 };
 
 // AI response function with proper prompts
-async function generateAIResponse(openai, userInput, context) {
+async function generateAIResponse(openai, userInput, context, conversationHistory = []) {
     try {
         // Load system prompt and knowledge base
         const systemPrompt = await loadSystemPrompt(context);
@@ -132,19 +151,23 @@ async function generateAIResponse(openai, userInput, context) {
         
         console.log('Processing AI request for user input:', userInput);
         
+        // Build messages with conversation history
+        const messages = [
+            {
+                role: 'system',
+                content: enhancedPrompt
+            },
+            ...conversationHistory,  // Include previous conversation
+            {
+                role: 'user',
+                content: userInput
+            }
+        ];
+        
         const completion = await openai.chat.completions.create({
             model: context.OPENAI_MODEL || 'gpt-3.5-turbo',
-            messages: [
-                {
-                    role: 'system',
-                    content: enhancedPrompt
-                },
-                {
-                    role: 'user',
-                    content: userInput
-                }
-            ],
-            max_tokens: 50,
+            messages: messages,
+            max_tokens: 150,
             temperature: 0.3,
         });
         
