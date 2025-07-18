@@ -1,0 +1,1031 @@
+[
+  {
+    "id": "02f83adb-fd3c-4d46-a89b-0697bb2218a1",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T04:14:42.721Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "accrual",
+      "entryType": "credit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 4000,
+      "balanceAsOf": 10005150,
+      "createdAt": "2025-07-18T04:14:42.855Z",
+      "updatedAt": "2025-07-18T04:14:42.907Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_service",
+        "description": "Customer service",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "d21ff2b0-10e6-41da-acca-d13215d09832",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T04:14:19.509Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "redemption",
+      "entryType": "debit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 2500,
+      "balanceAsOf": 10001150,
+      "createdAt": "2025-07-18T04:14:19.651Z",
+      "updatedAt": "2025-07-18T04:14:19.700Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_service",
+        "description": "System error correction",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "ae22763c-6018-4754-85ce-da4c5a418db7",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T04:14:03.501Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "accrual",
+      "entryType": "credit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 3000,
+      "balanceAsOf": 10003650,
+      "createdAt": "2025-07-18T04:14:03.601Z",
+      "updatedAt": "2025-07-18T04:14:03.665Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_service",
+        "description": "Customer service",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "fc11889f-7e92-4717-a9e9-a16bc55a29e2",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T04:13:51.080Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "accrual",
+      "entryType": "credit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 2000,
+      "balanceAsOf": 10000650,
+      "createdAt": "2025-07-18T04:13:51.182Z",
+      "updatedAt": "2025-07-18T04:13:51.263Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_service",
+        "description": "Customer service",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "47e659ca-8123-4cf7-9199-5e4c51f3c4bf",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T04:13:34.746Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "accrual",
+      "entryType": "credit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 1000,
+      "balanceAsOf": 9998650,
+      "createdAt": "2025-07-18T04:13:34.914Z",
+      "updatedAt": "2025-07-18T04:13:35.037Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_service",
+        "description": "Customer service",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "55f7ba63-8224-4880-9162-a8e0b4626e77",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:13:08.778Z",
+      "description": "Refund for Carbon: Patch",
+      "category": "refund",
+      "entryType": "credit",
+      "productType": "system_event",
+      "status": "confirmed",
+      "amount": 1000,
+      "balanceAsOf": 9997650,
+      "createdAt": "2025-07-18T03:13:09.082Z",
+      "updatedAt": "2025-07-18T03:13:09.082Z",
+      "orderFulfillmentStatus": "failed",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "id": "a7a06924-6857-4c3d-b0ee-ebeace13dab6",
+          "number": "6f1*****************************f174",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "cancelledAt": "2025-07-18T03:13:08Z",
+        "productName": "Patch",
+        "capabilityId": "38f23acc-f2fe-46fa-88f4-596f42545da7",
+        "fulfillingAt": "2025-07-18T03:10:59.257Z",
+        "pointsAmount": 1000,
+        "transferAmount": 200,
+        "processingDelay": 432000,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/PATCH.en.png",
+        "loyaltyProgramId": "2bb1cd28-342f-497a-9132-05ab85c85bb1",
+        "programShortName": "Patch",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Carbon credits (kg)",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Carbon credits (kg)",
+        "transferConnectIdentifier": "PATCH"
+      },
+      "metadata": {
+        "errors": [
+          {
+            "code": "TC40101",
+            "message": "General error"
+          }
+        ],
+        "locale": "en-AU",
+        "membership": {
+          "id": "a7a06924-6857-4c3d-b0ee-ebeace13dab6",
+          "number": "6f1*****************************f174",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "cancelledAt": "2025-07-18T03:13:08Z",
+        "productName": "Patch",
+        "capabilityId": "38f23acc-f2fe-46fa-88f4-596f42545da7",
+        "fulfillingAt": "2025-07-18T03:10:59.257Z",
+        "pointsAmount": 1000,
+        "transferAmount": 200,
+        "processingDelay": 432000,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/PATCH.en.png",
+        "loyaltyProgramId": "2bb1cd28-342f-497a-9132-05ab85c85bb1",
+        "programShortName": "Patch",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Carbon credits (kg)",
+        "redemptionActivityId": "7ced646a-577e-40c3-988a-a1c20a73479f",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Carbon credits (kg)",
+        "transferConnectIdentifier": "PATCH"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "b09f303a-406b-4b2f-996f-860faac25b1c",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/b09f303a-406b-4b2f-996f-860faac25b1c"
+        }
+      }
+    }
+  },
+  {
+    "id": "7ced646a-577e-40c3-988a-a1c20a73479f",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:10:57.849Z",
+      "description": "Redemption for Carbon: Patch",
+      "category": "redemption",
+      "entryType": "debit",
+      "productType": "shopping_cart",
+      "status": "failed",
+      "amount": 1000,
+      "balanceAsOf": 9996650,
+      "createdAt": "2025-07-18T03:10:58.094Z",
+      "updatedAt": "2025-07-18T03:13:08.420Z",
+      "orderFulfillmentStatus": "failed",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "id": "a7a06924-6857-4c3d-b0ee-ebeace13dab6",
+          "number": "6f1*****************************f174",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "cancelledAt": "2025-07-18T03:13:08Z",
+        "productName": "Patch",
+        "capabilityId": "38f23acc-f2fe-46fa-88f4-596f42545da7",
+        "fulfillingAt": "2025-07-18T03:10:59.257Z",
+        "pointsAmount": 1000,
+        "transferAmount": 200,
+        "processingDelay": 432000,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/PATCH.en.png",
+        "loyaltyProgramId": "2bb1cd28-342f-497a-9132-05ab85c85bb1",
+        "programShortName": "Patch",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Carbon credits (kg)",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Carbon credits (kg)",
+        "transferConnectIdentifier": "PATCH"
+      },
+      "metadata": {
+        "errors": [
+          {
+            "code": "TC40101",
+            "message": "General error"
+          }
+        ],
+        "locale": "en-AU",
+        "membership": {
+          "id": "a7a06924-6857-4c3d-b0ee-ebeace13dab6",
+          "number": "6f1*****************************f174",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "cancelledAt": "2025-07-18T03:13:08Z",
+        "productName": "Patch",
+        "capabilityId": "38f23acc-f2fe-46fa-88f4-596f42545da7",
+        "fulfillingAt": "2025-07-18T03:10:59.257Z",
+        "pointsAmount": 1000,
+        "transferAmount": 200,
+        "processingDelay": 432000,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/PATCH.en.png",
+        "loyaltyProgramId": "2bb1cd28-342f-497a-9132-05ab85c85bb1",
+        "programShortName": "Patch",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Carbon credits (kg)",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Carbon credits (kg)",
+        "transferConnectIdentifier": "PATCH"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "b09f303a-406b-4b2f-996f-860faac25b1c",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/b09f303a-406b-4b2f-996f-860faac25b1c"
+        }
+      }
+    }
+  },
+  {
+    "id": "5518bad5-78a2-436d-8c7a-f1bd1f950120",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:09:58.366Z",
+      "description": "Redemption for Carbon: Patch",
+      "category": "redemption",
+      "entryType": "debit",
+      "productType": "shopping_cart",
+      "status": "confirmed",
+      "amount": 1000,
+      "balanceAsOf": 9997650,
+      "createdAt": "2025-07-18T03:09:58.587Z",
+      "updatedAt": "2025-07-18T03:12:36.261Z",
+      "orderFulfillmentStatus": "fulfilled",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "id": "a7a06924-6857-4c3d-b0ee-ebeace13dab6",
+          "number": "6f1*****************************f174",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "fulfilledAt": "2025-07-18T03:12:36Z",
+        "productName": "Patch",
+        "capabilityId": "38f23acc-f2fe-46fa-88f4-596f42545da7",
+        "fulfillingAt": "2025-07-18T03:09:59.570Z",
+        "pointsAmount": 1000,
+        "transferAmount": 200,
+        "processingDelay": 432000,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/PATCH.en.png",
+        "loyaltyProgramId": "2bb1cd28-342f-497a-9132-05ab85c85bb1",
+        "programShortName": "Patch",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Carbon credits (kg)",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Carbon credits (kg)",
+        "transferConnectIdentifier": "PATCH"
+      },
+      "metadata": {
+        "recipient": {
+          "email": "as****************************7648@i***************o",
+          "address": null,
+          "lastName": "***sica*",
+          "firstName": "****ta**",
+          "companyName": null,
+          "phoneNumber": null
+        },
+        "createdFromRc": true,
+        "orderSourceType": "user"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "9d5e72f8-8925-45b0-84f1-10d903c8b31d",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/9d5e72f8-8925-45b0-84f1-10d903c8b31d"
+        }
+      }
+    }
+  },
+  {
+    "id": "f2a727e5-9dad-40d1-b526-fff00cb29a92",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:08:33.813Z",
+      "description": "Refund for Crypto: USDC",
+      "category": "refund",
+      "entryType": "credit",
+      "productType": "system_event",
+      "status": "confirmed",
+      "amount": 1000,
+      "balanceAsOf": 9998650,
+      "createdAt": "2025-07-18T03:08:34.143Z",
+      "updatedAt": "2025-07-18T03:08:34.143Z",
+      "orderFulfillmentStatus": "failed",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "id": "4ef1ee68-e3bf-40df-8142-8b061f74064e",
+          "number": "0xb***********************************0004",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "customData": {
+          "currency": "usdc"
+        },
+        "cancelledAt": "2025-07-18T03:08:33Z",
+        "productName": "USD Coin",
+        "capabilityId": "c7fb00b6-d330-4f71-bd66-472d4735d20f",
+        "fulfillingAt": "2025-07-18T03:08:32.470Z",
+        "pointsAmount": 1000,
+        "transferAmount": 9,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/GEMINI.en.png",
+        "loyaltyProgramId": "465eadb1-910d-4b98-87d1-487da2f21bbe",
+        "productShortName": "USDC",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "USDC",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "USDC",
+        "transferConnectIdentifier": "GEMINI"
+      },
+      "metadata": {
+        "errors": [
+          {
+            "code": "TC40101",
+            "message": "member_information.id general error"
+          }
+        ],
+        "locale": "en-AU",
+        "membership": {
+          "id": "4ef1ee68-e3bf-40df-8142-8b061f74064e",
+          "number": "0xb***********************************0004",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "customData": {
+          "currency": "usdc"
+        },
+        "cancelledAt": "2025-07-18T03:08:33Z",
+        "productName": "USD Coin",
+        "capabilityId": "c7fb00b6-d330-4f71-bd66-472d4735d20f",
+        "fulfillingAt": "2025-07-18T03:08:32.470Z",
+        "pointsAmount": 1000,
+        "transferAmount": 9,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/GEMINI.en.png",
+        "loyaltyProgramId": "465eadb1-910d-4b98-87d1-487da2f21bbe",
+        "productShortName": "USDC",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "USDC",
+        "redemptionActivityId": "f4de516f-3ac6-4b95-9a02-02d0ffd124de",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "USDC",
+        "transferConnectIdentifier": "GEMINI"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "894b4794-97b4-4892-a13c-e04887b1731f",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/894b4794-97b4-4892-a13c-e04887b1731f"
+        }
+      }
+    }
+  },
+  {
+    "id": "f4de516f-3ac6-4b95-9a02-02d0ffd124de",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:08:30.796Z",
+      "description": "Redemption for Crypto: USDC",
+      "category": "redemption",
+      "entryType": "debit",
+      "productType": "shopping_cart",
+      "status": "failed",
+      "amount": 1000,
+      "balanceAsOf": 9997650,
+      "createdAt": "2025-07-18T03:08:30.912Z",
+      "updatedAt": "2025-07-18T03:08:33.375Z",
+      "orderFulfillmentStatus": "failed",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "id": "4ef1ee68-e3bf-40df-8142-8b061f74064e",
+          "number": "0xb***********************************0004",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "customData": {
+          "currency": "usdc"
+        },
+        "cancelledAt": "2025-07-18T03:08:33Z",
+        "productName": "USD Coin",
+        "capabilityId": "c7fb00b6-d330-4f71-bd66-472d4735d20f",
+        "fulfillingAt": "2025-07-18T03:08:32.470Z",
+        "pointsAmount": 1000,
+        "transferAmount": 9,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/GEMINI.en.png",
+        "loyaltyProgramId": "465eadb1-910d-4b98-87d1-487da2f21bbe",
+        "productShortName": "USDC",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "USDC",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "USDC",
+        "transferConnectIdentifier": "GEMINI"
+      },
+      "metadata": {
+        "errors": [
+          {
+            "code": "TC40101",
+            "message": "member_information.id general error"
+          }
+        ],
+        "locale": "en-AU",
+        "membership": {
+          "id": "4ef1ee68-e3bf-40df-8142-8b061f74064e",
+          "number": "0xb***********************************0004",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "customData": {
+          "currency": "usdc"
+        },
+        "cancelledAt": "2025-07-18T03:08:33Z",
+        "productName": "USD Coin",
+        "capabilityId": "c7fb00b6-d330-4f71-bd66-472d4735d20f",
+        "fulfillingAt": "2025-07-18T03:08:32.470Z",
+        "pointsAmount": 1000,
+        "transferAmount": 9,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/GEMINI.en.png",
+        "loyaltyProgramId": "465eadb1-910d-4b98-87d1-487da2f21bbe",
+        "productShortName": "USDC",
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "USDC",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "USDC",
+        "transferConnectIdentifier": "GEMINI"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "894b4794-97b4-4892-a13c-e04887b1731f",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/894b4794-97b4-4892-a13c-e04887b1731f"
+        }
+      }
+    }
+  },
+  {
+    "id": "6b598559-db6e-4cf9-bcbb-6480552ebed6",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:07:57.878Z",
+      "description": "Redemption for Crypto: USDC",
+      "category": "redemption",
+      "entryType": "debit",
+      "productType": "shopping_cart",
+      "status": "confirmed",
+      "amount": 1000,
+      "balanceAsOf": 9998650,
+      "createdAt": "2025-07-18T03:07:57.983Z",
+      "updatedAt": "2025-07-18T03:08:00.479Z",
+      "orderFulfillmentStatus": "fulfilled",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "id": "4ef1ee68-e3bf-40df-8142-8b061f74064e",
+          "number": "0xb***********************************9890",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "customData": {
+          "currency": "usdc"
+        },
+        "fulfilledAt": "2025-07-18T03:08:00Z",
+        "productName": "USD Coin",
+        "capabilityId": "c7fb00b6-d330-4f71-bd66-472d4735d20f",
+        "fulfillingAt": "2025-07-18T03:07:59.230Z",
+        "pointsAmount": 1000,
+        "transferAmount": 9,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/GEMINI.en.png",
+        "loyaltyProgramId": "465eadb1-910d-4b98-87d1-487da2f21bbe",
+        "productShortName": "USDC",
+        "webhookCustomData": {
+          "currency": "usdc"
+        },
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "USDC",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "USDC",
+        "transferConnectIdentifier": "GEMINI"
+      },
+      "metadata": {
+        "recipient": {
+          "email": null,
+          "address": null,
+          "lastName": "***sica*",
+          "firstName": "****ta**",
+          "companyName": null,
+          "phoneNumber": null
+        },
+        "createdFromRc": true,
+        "orderSourceType": "user"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "04c06d2c-9014-4aeb-95ab-2ca1e0f40213",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/04c06d2c-9014-4aeb-95ab-2ca1e0f40213"
+        }
+      }
+    }
+  },
+  {
+    "id": "a5d5aed7-4038-4403-971a-bcc34574eeb0",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:07:00.934Z",
+      "description": "Refund for Transfer: British Airways Executive Club",
+      "category": "refund",
+      "entryType": "credit",
+      "productType": "system_event",
+      "status": "confirmed",
+      "amount": 1000,
+      "balanceAsOf": 9999650,
+      "createdAt": "2025-07-18T03:07:01.287Z",
+      "updatedAt": "2025-07-18T03:07:01.287Z",
+      "orderFulfillmentStatus": "failed",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "number": "****4326",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "cancelledAt": "2025-07-18T03:07:00Z",
+        "productName": "British Airways Executive Club",
+        "fulfillingAt": "2025-07-18T03:06:58.683Z",
+        "pointsAmount": 1000,
+        "transferAmount": 1000,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/BAAVIOS.en.png",
+        "loyaltyProgramId": "16c1d89d-4753-4363-958e-285f06259002",
+        "programShortName": "British Airways Executive Club",
+        "discountPercentage": 0,
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Avios",
+        "membershipInformation": {
+          "number": "****4326",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Avios",
+        "transferConnectIdentifier": "BAAVIOS"
+      },
+      "metadata": {
+        "errors": [
+          {
+            "code": "TC40001",
+            "message": "member_information.name does not match ID"
+          }
+        ],
+        "locale": "en-AU",
+        "membership": {
+          "number": "****4326",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "cancelledAt": "2025-07-18T03:07:00Z",
+        "productName": "British Airways Executive Club",
+        "fulfillingAt": "2025-07-18T03:06:58.683Z",
+        "pointsAmount": 1000,
+        "transferAmount": 1000,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/BAAVIOS.en.png",
+        "loyaltyProgramId": "16c1d89d-4753-4363-958e-285f06259002",
+        "programShortName": "British Airways Executive Club",
+        "discountPercentage": 0,
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Avios",
+        "membershipInformation": {
+          "number": "64384326",
+          "lastName": "Watsica",
+          "firstName": "Dakota"
+        },
+        "redemptionActivityId": "34d9202a-c92a-4538-b8a7-5fd5995feab4",
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Avios",
+        "transferConnectIdentifier": "BAAVIOS"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "b78de9ae-3c78-410d-8f47-6d2cf12f414f",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/b78de9ae-3c78-410d-8f47-6d2cf12f414f"
+        }
+      }
+    }
+  },
+  {
+    "id": "34d9202a-c92a-4538-b8a7-5fd5995feab4",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:06:56.912Z",
+      "description": "Redemption for Transfer: British Airways Executive Club",
+      "category": "redemption",
+      "entryType": "debit",
+      "productType": "shopping_cart",
+      "status": "failed",
+      "amount": 1000,
+      "balanceAsOf": 9998650,
+      "createdAt": "2025-07-18T03:06:57.031Z",
+      "updatedAt": "2025-07-18T03:07:00.385Z",
+      "orderFulfillmentStatus": "failed",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "number": "****4326",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "cancelledAt": "2025-07-18T03:07:00Z",
+        "productName": "British Airways Executive Club",
+        "fulfillingAt": "2025-07-18T03:06:58.683Z",
+        "pointsAmount": 1000,
+        "transferAmount": 1000,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/BAAVIOS.en.png",
+        "loyaltyProgramId": "16c1d89d-4753-4363-958e-285f06259002",
+        "programShortName": "British Airways Executive Club",
+        "discountPercentage": 0,
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Avios",
+        "membershipInformation": {
+          "number": "****4326",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Avios",
+        "transferConnectIdentifier": "BAAVIOS"
+      },
+      "metadata": {
+        "errors": [
+          {
+            "code": "TC40001",
+            "message": "member_information.name does not match ID"
+          }
+        ],
+        "locale": "en-AU",
+        "membership": {
+          "number": "****4326",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "cancelledAt": "2025-07-18T03:07:00Z",
+        "productName": "British Airways Executive Club",
+        "fulfillingAt": "2025-07-18T03:06:58.683Z",
+        "pointsAmount": 1000,
+        "transferAmount": 1000,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/BAAVIOS.en.png",
+        "loyaltyProgramId": "16c1d89d-4753-4363-958e-285f06259002",
+        "programShortName": "British Airways Executive Club",
+        "discountPercentage": 0,
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Avios",
+        "membershipInformation": {
+          "number": "64384326",
+          "lastName": "Watsica",
+          "firstName": "Dakota"
+        },
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Avios",
+        "transferConnectIdentifier": "BAAVIOS"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "b78de9ae-3c78-410d-8f47-6d2cf12f414f",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/b78de9ae-3c78-410d-8f47-6d2cf12f414f"
+        }
+      }
+    }
+  },
+  {
+    "id": "84e2a9ba-3200-417a-bef5-1414b2d4577b",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-18T03:05:13.938Z",
+      "description": "Redemption for Transfer: British Airways Executive Club",
+      "category": "redemption",
+      "entryType": "debit",
+      "productType": "shopping_cart",
+      "status": "confirmed",
+      "amount": 1000,
+      "balanceAsOf": 9999650,
+      "createdAt": "2025-07-18T03:05:23.050Z",
+      "updatedAt": "2025-07-18T03:05:31.291Z",
+      "orderFulfillmentStatus": "fulfilled",
+      "orderItemData": {
+        "locale": "en-AU",
+        "membership": {
+          "number": "****4007",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "fulfilledAt": "2025-07-18T03:05:30Z",
+        "productName": "British Airways Executive Club",
+        "fulfillingAt": "2025-07-18T03:05:28.426Z",
+        "pointsAmount": 1000,
+        "transferAmount": 1000,
+        "processingDelay": 86400,
+        "orderSourceType": "impersonated_user",
+        "productImageUrl": "https://kaligo.imgix.net/logos/BAAVIOS.en.png",
+        "loyaltyProgramId": "16c1d89d-4753-4363-958e-285f06259002",
+        "programShortName": "British Airways Executive Club",
+        "discountPercentage": 0,
+        "revisedCardNumber": null,
+        "tenantCurrencyName": "Rewards Points",
+        "loyaltyCurrencyName": "Avios",
+        "membershipInformation": {
+          "number": "****4007",
+          "lastName": "***sica*",
+          "firstName": "****ta**"
+        },
+        "tenantCurrencyShortName": "Rewards Points",
+        "loyaltyCurrencyShortName": "Avios",
+        "transferConnectIdentifier": "BAAVIOS"
+      },
+      "metadata": {
+        "recipient": {
+          "email": null,
+          "address": null,
+          "lastName": "***sica*",
+          "firstName": "****ta**",
+          "companyName": null,
+          "phoneNumber": null
+        },
+        "createdFromRc": true,
+        "orderSourceType": "user"
+      }
+    },
+    "relationships": {
+      "order": {
+        "data": {
+          "id": "a64a819f-f375-4104-907d-00b7f00cf78b",
+          "type": "order"
+        },
+        "links": {
+          "related": "/orders/a64a819f-f375-4104-907d-00b7f00cf78b"
+        }
+      }
+    }
+  },
+  {
+    "id": "976ac5b1-ee0d-47e3-9008-be75d91ba3d5",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-17T14:28:13.757Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "redemption",
+      "entryType": "debit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 50,
+      "balanceAsOf": 10000650,
+      "createdAt": "2025-07-17T14:28:14.747Z",
+      "updatedAt": "2025-07-17T14:28:15.273Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_service",
+        "description": "System error correction",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "d4fd16ac-dabf-4fdb-8742-d0d2e3f4c99d",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-16T08:51:22.523Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "accrual",
+      "entryType": "credit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 400,
+      "balanceAsOf": 10000700,
+      "createdAt": "2025-07-16T08:51:22.955Z",
+      "updatedAt": "2025-07-16T08:51:23.471Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_service",
+        "description": "Customer service",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "328cedcc-6a2b-44be-b010-6dbbd5ebf48e",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-16T08:51:04.973Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "accrual",
+      "entryType": "credit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 200,
+      "balanceAsOf": 10000300,
+      "createdAt": "2025-07-16T08:51:05.149Z",
+      "updatedAt": "2025-07-16T08:51:05.685Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_service",
+        "description": "Customer service",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "d1557707-1b1e-45b7-853b-d0822e69277c",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-16T08:36:10.983Z",
+      "description": "Manual adjustment: Customer recognition",
+      "category": "accrual",
+      "entryType": "credit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 100,
+      "balanceAsOf": 10000100,
+      "createdAt": "2025-07-16T08:36:11.118Z",
+      "updatedAt": "2025-07-16T08:36:11.187Z",
+      "metadata": {
+        "notes": "Agent ID: tim.du@ascenda.com",
+        "reason": "customer_recognition",
+        "description": "Customer service",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  },
+  {
+    "id": "563e3ee6-eb9c-420d-b72e-d45fae8a9896",
+    "type": "points_transaction",
+    "attributes": {
+      "userId": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+      "pointsAccountId": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+      "transactionTime": "2025-07-15T23:43:26.383Z",
+      "description": "Manual adjustment: Customer service",
+      "category": "accrual",
+      "entryType": "credit",
+      "productType": "manual_adjustment",
+      "status": "confirmed",
+      "amount": 10000000,
+      "balanceAsOf": 10000000,
+      "createdAt": "2025-07-15T23:43:26.884Z",
+      "updatedAt": "2025-07-15T23:43:27.027Z",
+      "metadata": {
+        "notes": "Agent ID: james.weng@ascenda.com",
+        "reason": "customer_service",
+        "description": "Customer service",
+        "orderSourceType": "user",
+        "loyaltyCurrencyName": "Rewards Points",
+        "loyaltyProgramShortName": "CbaDemoRcUs Rewards"
+      }
+    },
+    "relationships": {}
+  }
+]

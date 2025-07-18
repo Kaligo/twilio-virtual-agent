@@ -2,6 +2,35 @@ const { OpenAI } = require('openai');
 
 // Simple conversation history for current session
 let conversationHistory = [];
+let currentCallSid = null;
+
+// Cache system prompt and knowledge base per deployment (static assets)
+let cachedSystemPrompt = null;
+let cachedKnowledgeBase = null;
+let isDataLoaded = false;
+
+// Helper function to ensure static data is loaded once per deployment
+async function ensureDataLoaded(context) {
+    if (!isDataLoaded) {
+        console.log('📥 Loading system prompt and knowledge base (first time this deployment)...');
+        
+        try {
+            cachedSystemPrompt = await loadSystemPrompt(context);
+            cachedKnowledgeBase = await loadKnowledgeBase(context);
+            
+            isDataLoaded = true;
+            console.log('✅ Static data loaded and cached for deployment');
+        } catch (error) {
+            console.error('❌ Error loading static data:', error);
+            // Set fallback values
+            cachedSystemPrompt = 'You are a helpful phone assistant. Keep responses brief and conversational.';
+            cachedKnowledgeBase = {};
+            isDataLoaded = true; // Mark as loaded even with fallback to avoid retrying
+        }
+    }
+}
+
+
 
 // Helper function to get voice configuration
 function getVoiceConfig(context) {
@@ -53,12 +82,22 @@ exports.handler = async function(context, event, callback) {
             // User has spoken - process with OpenAI
             console.log(`User input received (Confidence: ${confidence})`);
             
+            // Ensure static data is loaded (once per deployment)
+            await ensureDataLoaded(context);
+            
+            // Reset conversation history for new calls
+            if (currentCallSid !== event.CallSid) {
+                currentCallSid = event.CallSid;
+                conversationHistory = [];
+            }
+            
             // Generate response using OpenAI with conversation history
             const aiResponse = await generateAIResponse(
                 openai, 
                 speechResult,
-                context,
-                conversationHistory
+                cachedSystemPrompt,
+                conversationHistory,
+                context
             );
             
             // Update conversation history
@@ -184,15 +223,14 @@ exports.handler = async function(context, event, callback) {
     callback(null, twiml);
 };
 
+
+
 // AI response function with proper prompts
-async function generateAIResponse(openai, userInput, context, conversationHistory = []) {
+async function generateAIResponse(openai, userInput, systemPrompt, conversationHistory = [], context) {
     try {
-        // Load system prompt and knowledge base
-        const systemPrompt = await loadSystemPrompt(context);
-        const knowledgeBase = await loadKnowledgeBase(context);
-        
-        // Build enhanced prompt with context
-        const enhancedPrompt = `${systemPrompt}\n\nKnowledge Base for reference:\n${JSON.stringify(knowledgeBase, null, 2)}\n\nImportant: Keep responses to 1-2 sentences maximum for voice conversation.`;
+        // Build enhanced prompt with context (using cached compressed data)
+        const knowledgeBaseJson = JSON.stringify(cachedKnowledgeBase);
+        const enhancedPrompt = `${systemPrompt}\n\nKnowledge Base for reference:\n${knowledgeBaseJson}\n\nImportant: Keep responses to 1-2 sentences maximum for voice conversation.`;
         
         console.log('Processing AI request for user input:', userInput);
         
@@ -239,15 +277,31 @@ async function loadSystemPrompt(context) {
     }
 }
 
-// Load knowledge base from assets
+// Load compressed knowledge base from single file
 async function loadKnowledgeBase(context) {
     try {
+        console.log('Loading compressed knowledge base...');
         const response = await fetch(`https://${context.DOMAIN_NAME}/data/knowledge-base.json`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
         const knowledgeBase = await response.json();
-        console.log('Knowledge base loaded successfully:', knowledgeBase.length, 'items');
+        
+        // Log what was loaded
+        const sections = Object.keys(knowledgeBase);
+        const totalItems = Object.values(knowledgeBase)
+            .filter(Array.isArray)
+            .reduce((sum, arr) => sum + arr.length, 0);
+        
+        console.log(`✅ Compressed knowledge base loaded: ${sections.length} sections, ${totalItems} items`);
+        console.log(`📋 Sections: ${sections.join(', ')}`);
+        
         return knowledgeBase;
+        
     } catch (error) {
-        console.error('Error loading knowledge base:', error);
-        return [];
+        console.error('❌ Error loading compressed knowledge base:', error.message);
+        return {};
     }
 }

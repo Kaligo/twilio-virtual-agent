@@ -1,0 +1,17 @@
+[
+    {
+        "id": "6f1b0d36-b979-4213-a693-dcd216a5f174",
+        "birthdate": "2004-01-15",
+        "email": "dakota@gmail.com",
+        "firstName": "Dakota",
+        "gender": "male",
+        "lastName": "Watsica",
+        "phoneNumber": "+61429867977",
+        "status": "active",
+        "pointsAccounts": [
+            {
+            "id": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0"
+            }
+        ]
+    }
+]
