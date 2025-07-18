@@ -1,8 +1,19 @@
+// Helper function to get voice configuration
+function getVoiceConfig(context) {
+    return {
+        voice: context.VOICE || 'Polly.Joanna',
+        language: context.LANGUAGE || 'en-US'
+    };
+}
+
 exports.handler = async function(context, event, callback) {
     // Create TwiML response object
     const twiml = new Twilio.twiml.VoiceResponse();
     
     try {
+        // Get voice configuration
+        const voiceConfig = getVoiceConfig(context);
+        
         // Start recording now that call is established
         if (event.CallSid) {
             console.log('Starting conversation recording');
@@ -21,10 +32,7 @@ exports.handler = async function(context, event, callback) {
         }
         
         // Continue welcome message and start conversation
-        twiml.say({
-            voice: 'Polly.Joanna',
-            language: 'en-US'
-        }, 'Please tell me how I can help you.');
+        twiml.say(voiceConfig, 'Please tell me how I can help you.');
         
         // Gather for speech input
         const speechTimeout = parseInt(context.SPEECH_TIMEOUT) || 60;
@@ -39,17 +47,11 @@ exports.handler = async function(context, event, callback) {
         });
         
         // Fallback if no input
-        twiml.say({
-            voice: 'Polly.Joanna',
-            language: 'en-US'
-        }, 'I did not hear anything for a while. Thank you for calling. Goodbye!');
+        twiml.say(voiceConfig, 'I did not hear anything for a while. Thank you for calling. Goodbye!');
         
     } catch (error) {
         console.error('Error in delayed recording handler:', error);
-        twiml.say({
-            voice: 'Polly.Joanna',
-            language: 'en-US'
-        }, 'An error occurred');
+        twiml.say(getVoiceConfig(context), 'An error occurred');
     }
     
     callback(null, twiml);

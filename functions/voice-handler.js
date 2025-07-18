@@ -3,6 +3,14 @@ const { OpenAI } = require('openai');
 // Simple conversation history for current session
 let conversationHistory = [];
 
+// Helper function to get voice configuration
+function getVoiceConfig(context) {
+    return {
+        voice: context.VOICE || 'Polly.Joanna',
+        language: context.LANGUAGE || 'en-US'
+    };
+}
+
 exports.handler = async function(context, event, callback) {
     // Create TwiML response object
     const twiml = new Twilio.twiml.VoiceResponse();
@@ -12,14 +20,12 @@ exports.handler = async function(context, event, callback) {
         const openaiApiKey = context.OPENAI_API_KEY;
         const speechTimeout = parseInt(context.SPEECH_TIMEOUT) || 60;
         const speechEndTimeout = parseInt(context.SPEECH_END_TIMEOUT) || 1;
+        const voiceConfig = getVoiceConfig(context);
         
         // Check if OpenAI API key is available
         if (!openaiApiKey) {
             console.error('OpenAI API key not found in environment variables');
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'AI service not configured');
+            twiml.say(voiceConfig, 'AI service not configured');
             callback(null, twiml);
             return;
         }
@@ -68,10 +74,7 @@ exports.handler = async function(context, event, callback) {
             console.log(`AI response generated successfully (${conversationHistory.length / 2} exchanges remembered)`);
             
             // Provide the response and continue conversation
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, aiResponse);
+            twiml.say(voiceConfig, aiResponse);
             
             // Continue listening for more input
             twiml.gather({
@@ -83,20 +86,14 @@ exports.handler = async function(context, event, callback) {
             });
             
             // Fallback if no more input
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'Thank you for calling. Goodbye!');
+            twiml.say(voiceConfig, 'Thank you for calling. Goodbye!');
             
         } else if (isInitialCall) {
             // True initial call - welcome message with delayed recording
             console.log('Initial call - starting welcome sequence');
             
             // Welcome message (starts immediately)
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'Hello! I am your virtual assistant.');
+            twiml.say(voiceConfig, 'Welcome To Yello Rewards, How can I help you?');
             
             // Small pause to let call stabilize
             twiml.pause({ length: 1 });
@@ -108,10 +105,7 @@ exports.handler = async function(context, event, callback) {
             // Any other case - continue conversation without repeating welcome
             console.log('Continuing conversation flow');
             
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'Please tell me how I can help you.');
+            twiml.say(voiceConfig, 'Please tell me how I can help you.');
             
             // Gather for speech input
             twiml.gather({
@@ -122,18 +116,12 @@ exports.handler = async function(context, event, callback) {
                 method: 'POST'
             });
             
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'I did not hear anything for a while. Thank you for calling. Goodbye!');
+            twiml.say(voiceConfig, 'I did not hear anything for a while. Thank you for calling. Goodbye!');
         }
         
     } catch (error) {
         console.error('Error in voice handler:', error);
-        twiml.say({
-            voice: 'Polly.Joanna',
-            language: 'en-US'
-        }, 'An error occurred');
+        twiml.say(getVoiceConfig(context), 'An error occurred');
     }
     
     callback(null, twiml);
