@@ -1,0 +1,23 @@
+[
+    {
+        "id": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0",
+        "status": "active",
+        "owner": "user",
+        "pointsBalance": 10005150.0,
+        "accruals": [],
+        "tranches": [
+            {
+                "balance": 2500.0,
+                "expiryDate": "2025-09-18"
+            },
+            {
+                "balance": 4000.0,
+                "expiryDate": "2025-10-18"
+            },
+            {
+                "balance": 9998650.0,
+                "expiryDate": "9999-12-31"
+            }
+        ]
+    }
+]
