@@ -301,10 +301,10 @@ async function generateAIResponse(openai, userInput, systemPrompt, conversationH
         ];
         
         const completion = await openai.chat.completions.create({
-            model: context.OPENAI_MODEL || 'gpt-3.5-turbo',
+            model: context.OPENAI_MODEL || 'gpt-4.1-mini',
             messages: messages,
             max_tokens: 150,
-            temperature: 0.3,
+            temperature: 0.25,
         });
         
         const response = completion.choices[0].message.content.trim();
