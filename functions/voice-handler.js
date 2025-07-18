@@ -3,6 +3,14 @@ const { OpenAI } = require('openai');
 // Simple conversation history for current session
 let conversationHistory = [];
 
+// Helper function to get voice configuration
+function getVoiceConfig(context) {
+    return {
+        voice: context.VOICE || 'Google.en-AU-Neural2-C',
+        language: context.LANGUAGE || 'en-AU'
+    };
+}
+
 exports.handler = async function(context, event, callback) {
     // Create TwiML response object
     const twiml = new Twilio.twiml.VoiceResponse();
@@ -12,14 +20,12 @@ exports.handler = async function(context, event, callback) {
         const openaiApiKey = context.OPENAI_API_KEY;
         const speechTimeout = parseInt(context.SPEECH_TIMEOUT) || 60;
         const speechEndTimeout = parseInt(context.SPEECH_END_TIMEOUT) || 1;
+        const voiceConfig = getVoiceConfig(context);
         
         // Check if OpenAI API key is available
         if (!openaiApiKey) {
             console.error('OpenAI API key not found in environment variables');
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'AI service not configured');
+            twiml.say(voiceConfig, 'AI service not configured');
             callback(null, twiml);
             return;
         }
@@ -33,10 +39,15 @@ exports.handler = async function(context, event, callback) {
         const speechResult = event.SpeechResult;
         const confidence = event.Confidence;
         
+        // Log basic call information
+        console.log('Processing call:', event.CallSid);
+        
         // More robust initial call detection - only true for very first call
         const isInitialCall = !speechResult && 
                               !event.Digits && 
-                              event.CallStatus === 'ringing';
+                              !event.DialCallStatus;
+        
+        console.log('Initial call detected:', isInitialCall);
         
         if (speechResult) {
             // User has spoken - process with OpenAI
@@ -67,14 +78,70 @@ exports.handler = async function(context, event, callback) {
             
             console.log(`AI response generated successfully (${conversationHistory.length / 2} exchanges remembered)`);
             
-            // Provide the response and continue conversation
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, aiResponse);
+            // Check if AI response indicates a transfer request
+            if (aiResponse.includes('Transferring to Yello customer service team')) {
+                console.log('Transfer request detected - connecting to Yello customer service');
+                
+                // Inform the caller about the transfer
+                twiml.say(voiceConfig, 'I\'ll transfer you to our customer service team now. Please hold.');
+                
+                // Transfer the call to the specified number
+                twiml.dial({
+                    timeout: 30,
+                    record: 'record-from-ringing-dual',
+                    action: '/transfer-status',
+                    method: 'POST'
+                }, '+18655516860');
+                
+                // Fallback message if transfer fails
+                twiml.say(voiceConfig, 'Sorry, I was unable to connect you. Please try calling our customer service directly at 865-551-6860.');
+                
+            } else {
+                // Normal conversation flow - provide AI response and continue
+                twiml.say(voiceConfig, aiResponse);
+                
+                // Continue listening for more input
+                twiml.gather({
+                    input: 'speech',
+                    timeout: speechTimeout,
+                    speechTimeout: speechEndTimeout,
+                    action: '/voice-handler',
+                    method: 'POST'
+                });
+                
+                // Fallback if no more input
+                twiml.say(voiceConfig, 'Thank you for calling. Goodbye!');
+            }
             
-            // Continue listening for more input
-            twiml.gather({
+        } else if (isInitialCall) {
+            // True initial call - welcome message with conversation start
+            console.log('Initial call - starting welcome sequence');
+            
+            // Welcome message (starts immediately)
+            twiml.say(voiceConfig, 'Welcome To Yello Rewards');
+            
+            // Small pause to let call stabilize
+            twiml.pause({ length: 1 });
+            
+            // Start recording if possible
+            if (event.CallSid) {
+                console.log('Attempting to start recording');
+                try {
+                    const client = context.getTwilioClient();
+                    const recording = await client.calls(event.CallSid).recordings.create({
+                        recordingChannels: 'dual',
+                        recordingTrack: 'both',
+                        recordingStatusCallback: '/recording-handler'
+                    });
+                    console.log('Recording started successfully:', recording.sid);
+                } catch (error) {
+                    console.log('Recording not available:', error.message);
+                    console.log('Continuing without recording');
+                }
+            }
+            
+            // Gather for speech input
+            const gather = twiml.gather({
                 input: 'speech',
                 timeout: speechTimeout,
                 speechTimeout: speechEndTimeout,
@@ -82,39 +149,20 @@ exports.handler = async function(context, event, callback) {
                 method: 'POST'
             });
             
-            // Fallback if no more input
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'Thank you for calling. Goodbye!');
+            // Add the prompt inside the gather
+            gather.say(voiceConfig, 'How may I help you today?');
             
-        } else if (isInitialCall) {
-            // True initial call - welcome message with delayed recording
-            console.log('Initial call - starting welcome sequence');
+            console.log('TwiML prepared - waiting for user input');
             
-            // Welcome message (starts immediately)
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'Hello! I am your virtual assistant.');
-            
-            // Small pause to let call stabilize
-            twiml.pause({ length: 1 });
-            
-            // Start recording after delay using a redirect to ensure timing
-            twiml.redirect('/start-recording-and-continue');
+            // Fallback if no input
+            twiml.say(voiceConfig, 'I did not hear anything for a while. Thank you for calling. Goodbye!');
             
         } else {
             // Any other case - continue conversation without repeating welcome
             console.log('Continuing conversation flow');
             
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'Please tell me how I can help you.');
-            
             // Gather for speech input
-            twiml.gather({
+            const gather = twiml.gather({
                 input: 'speech',
                 timeout: speechTimeout,
                 speechTimeout: speechEndTimeout,
@@ -122,18 +170,15 @@ exports.handler = async function(context, event, callback) {
                 method: 'POST'
             });
             
-            twiml.say({
-                voice: 'Polly.Joanna',
-                language: 'en-US'
-            }, 'I did not hear anything for a while. Thank you for calling. Goodbye!');
+            // Add the prompt inside the gather
+            gather.say(voiceConfig, 'I would be happy to assist you today. How may I help you?');
+            
+            twiml.say(voiceConfig, 'I did not hear anything for a while. Thank you for calling. Goodbye!');
         }
         
     } catch (error) {
         console.error('Error in voice handler:', error);
-        twiml.say({
-            voice: 'Polly.Joanna',
-            language: 'en-US'
-        }, 'An error occurred');
+        twiml.say(getVoiceConfig(context), 'An error occurred');
     }
     
     callback(null, twiml);

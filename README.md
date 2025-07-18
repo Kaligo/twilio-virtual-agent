@@ -69,6 +69,10 @@ Edit `.env` with your actual API key:
 # OpenAI Configuration
 OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_MODEL=gpt-3.5-turbo
+
+# Voice Configuration
+VOICE=Polly.Joanna
+LANGUAGE=en-US
 ```
 
 ### 5. Customize Your Agent
@@ -155,10 +159,24 @@ The system automatically attempts to record conversations:
 
 ## Voice Configuration
 
-- **Voice**: Amazon Polly's Joanna voice for natural-sounding responses
+- **Voice**: Configurable Amazon Polly voice (default: Joanna)
+- **Language**: Configurable language setting (default: en-US)
 - **Speech Detection**: 1-second end-of-speech detection for fast responses
 - **Call Timeout**: 60 seconds of inactivity before auto-hangup
 - **Response Length**: Optimized ~50 tokens for voice conversations
+
+### Available Voice Options
+
+The system supports any Amazon Polly voice available in Twilio. Popular options include:
+
+- **English**: `Polly.Joanna` (female), `Polly.Matthew` (male), `Polly.Amy` (female), `Polly.Brian` (male)
+- **Other Languages**: `Polly.Celine` (French), `Polly.Vicki` (German), `Polly.Conchita` (Spanish)
+
+Configure these in your environment variables:
+```env
+VOICE=Polly.Matthew
+LANGUAGE=en-US
+```
 
 ## Monitoring and Debugging
 
