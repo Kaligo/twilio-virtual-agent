@@ -195,7 +195,7 @@ exports.handler = async function(context, event, callback) {
                 // Transfer the call to the specified number
                 twiml.dial({
                     timeout: 30,
-                    record: 'record-from-ringing-dual',
+                    // record: 'record-from-ringing-dual', // Commented out to preserve original recording
                     action: '/transfer-status',
                     method: 'POST'
                 }, '+18655516860');
