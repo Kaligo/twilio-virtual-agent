@@ -24,18 +24,14 @@ function createMockContext() {
     
     return {
         OPENAI_API_KEY: process.env.OPENAI_API_KEY,
-        OPENAI_MODEL: process.env.OPENAI_MODEL || 'gpt-3.5-turbo',
+        OPENAI_MODEL: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
         DOMAIN_NAME: 'localhost:3000' // This won't work for file loading, so we'll override the load functions
     };
 }
 
 // Local version of generateAIResponse that works without Twilio context
-async function generateAIResponse(openai, userInput, context, conversationHistory = []) {
+async function generateAIResponse(openai, userInput, context, conversationHistory = [], systemPrompt, knowledgeBase) {
     try {
-        // Load system prompt and knowledge base locally
-        const systemPrompt = await loadSystemPromptLocal();
-        const knowledgeBase = await loadKnowledgeBaseLocal();
-        
         // Build enhanced prompt with context (using compressed format like production)
         const knowledgeBaseJson = JSON.stringify(knowledgeBase);
         const enhancedPrompt = `${systemPrompt}\n\nKnowledge Base for reference:\n${knowledgeBaseJson}\n\nImportant: Keep responses to 1-2 sentences maximum for voice conversation.`;
@@ -110,6 +106,13 @@ async function loadKnowledgeBaseLocal() {
 // Main interactive function
 async function startLocalTesting() {
     console.log(colors.cyan + colors.bright + '🤖 AI Response Local Tester' + colors.reset);
+    console.log(colors.dim + 'Loading system data...' + colors.reset);
+    
+    // Load system prompt and knowledge base once at startup
+    const systemPrompt = await loadSystemPromptLocal();
+    const knowledgeBase = await loadKnowledgeBaseLocal();
+    
+    console.log(colors.green + '✅ System data loaded successfully' + colors.reset);
     console.log(colors.dim + 'Type your messages and press Enter to get AI responses' + colors.reset);
     console.log(colors.dim + 'Type "exit" or "quit" to stop, "clear" to reset conversation' + colors.reset);
     console.log(colors.dim + '─'.repeat(50) + colors.reset + '\n');
@@ -164,8 +167,8 @@ async function startLocalTesting() {
         }
         
         try {
-            // Get AI response with conversation history
-            const aiResponse = await generateAIResponse(openai, userInput, context, conversationHistory);
+            // Get AI response with conversation history and preloaded data
+            const aiResponse = await generateAIResponse(openai, userInput, context, conversationHistory, systemPrompt, knowledgeBase);
             
             // Add both messages to conversation history
             conversationHistory.push({
