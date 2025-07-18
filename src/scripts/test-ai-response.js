@@ -36,8 +36,9 @@ async function generateAIResponse(openai, userInput, context, conversationHistor
         const systemPrompt = await loadSystemPromptLocal();
         const knowledgeBase = await loadKnowledgeBaseLocal();
         
-        // Build enhanced prompt with context
-        const enhancedPrompt = `${systemPrompt}\n\nKnowledge Base for reference:\n${JSON.stringify(knowledgeBase, null, 2)}\n\nImportant: Keep responses to 1-2 sentences maximum for voice conversation.`;
+        // Build enhanced prompt with context (using compressed format like production)
+        const knowledgeBaseJson = JSON.stringify(knowledgeBase);
+        const enhancedPrompt = `${systemPrompt}\n\nKnowledge Base for reference:\n${knowledgeBaseJson}\n\nImportant: Keep responses to 1-2 sentences maximum for voice conversation.`;
         
         console.log(colors.dim + 'Processing AI request...' + colors.reset);
         
@@ -73,26 +74,36 @@ async function generateAIResponse(openai, userInput, context, conversationHistor
 // Load system prompt from local file
 async function loadSystemPromptLocal() {
     try {
-        const promptPath = path.join(__dirname, 'assets', 'prompts', 'system-prompt.txt');
+        const promptPath = path.join(__dirname, '..', '..', 'assets', 'prompts', 'system-prompt.txt');
         const prompt = fs.readFileSync(promptPath, 'utf8');
         console.log(colors.dim + 'System prompt loaded successfully' + colors.reset);
         return prompt;
     } catch (error) {
         console.error(colors.yellow + 'Warning: Could not load system prompt, using default' + colors.reset);
+        console.error(colors.dim + 'Tried path:', promptPath + colors.reset);
         return 'You are a helpful phone assistant. Keep responses brief and conversational.';
     }
 }
 
-// Load knowledge base from local file
+// Load knowledge base from local file (compressed format)
 async function loadKnowledgeBaseLocal() {
     try {
-        const kbPath = path.join(__dirname, 'assets', 'data', 'knowledge-base.json');
+        const kbPath = path.join(__dirname, '..', '..', 'assets', 'data', 'knowledge-base.json');
         const knowledgeBase = JSON.parse(fs.readFileSync(kbPath, 'utf8'));
-        console.log(colors.dim + `Knowledge base loaded successfully: ${knowledgeBase.length} items` + colors.reset);
+        
+        // Count total items in compressed format
+        const totalItems = Object.values(knowledgeBase)
+            .filter(Array.isArray)
+            .reduce((sum, arr) => sum + arr.length, 0);
+        
+        console.log(colors.dim + `Compressed knowledge base loaded: ${Object.keys(knowledgeBase).length} sections, ${totalItems} items` + colors.reset);
+        console.log(colors.dim + `Sections: ${Object.keys(knowledgeBase).join(', ')}` + colors.reset);
+        
         return knowledgeBase;
     } catch (error) {
-        console.error(colors.yellow + 'Warning: Could not load knowledge base, using empty array' + colors.reset);
-        return [];
+        console.error(colors.yellow + 'Warning: Could not load knowledge base, using empty object' + colors.reset);
+        console.error(colors.dim + 'Tried path:', kbPath + colors.reset);
+        return {};
     }
 }
 
