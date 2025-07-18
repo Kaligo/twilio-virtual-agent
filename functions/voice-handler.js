@@ -9,6 +9,71 @@ let cachedSystemPrompt = null;
 let cachedKnowledgeBase = null;
 let isDataLoaded = false;
 
+// Track recording attempts per call
+let recordingAttempts = new Map();
+
+// Retry recording with exponential backoff
+async function attemptRecording(context, callSid, attempt = 1, maxAttempts = 3) {
+    const client = context.getTwilioClient();
+    const delay = Math.pow(2, attempt - 1) * 1000; // 1s, 2s, 4s delays
+    
+    try {
+        console.log(`📹 Recording attempt ${attempt}/${maxAttempts} for call ${callSid}`);
+        
+        if (attempt > 1) {
+            console.log(`⏱️  Waiting ${delay}ms before retry...`);
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
+        
+        const recording = await client.calls(callSid).recordings.create({
+            recordingChannels: 'dual',
+            recordingTrack: 'both',
+            recordingStatusCallback: '/recording-handler'
+        });
+        
+        console.log('✅ Recording started successfully:', recording.sid);
+        recordingAttempts.delete(callSid); // Clean up tracking
+        return recording;
+        
+    } catch (error) {
+        console.error(`❌ Recording attempt ${attempt} failed:`, error.message);
+        
+        // Don't retry if it's a permanent limitation
+        if (error.message.includes('not eligible for recording') || 
+            error.code === 21218 || 
+            error.code === 21219) {
+            console.error('💡 Permanent recording limitation - stopping retries');
+            recordingAttempts.delete(callSid);
+            return null;
+        }
+        
+        // Retry if we haven't exceeded max attempts
+        if (attempt < maxAttempts) {
+            console.log(`🔄 Will retry recording (${attempt + 1}/${maxAttempts})`);
+            return attemptRecording(context, callSid, attempt + 1, maxAttempts);
+        } else {
+            console.error('❌ Max recording attempts reached');
+            recordingAttempts.delete(callSid);
+            return null;
+        }
+    }
+}
+
+// Start recording on first speech (delayed approach)
+async function startRecordingOnFirstSpeech(context, callSid) {
+    // Check if we've already attempted recording for this call
+    if (recordingAttempts.has(callSid)) {
+        console.log('📹 Recording already active for this call');
+        return;
+    }
+    
+    recordingAttempts.set(callSid, true);
+    console.log('🎙️  Starting delayed recording on first speech input...');
+    
+    // Attempt recording with retries
+    await attemptRecording(context, callSid);
+}
+
 // Helper function to ensure static data is loaded once per deployment
 async function ensureDataLoaded(context) {
     if (!isDataLoaded) {
@@ -81,6 +146,9 @@ exports.handler = async function(context, event, callback) {
         if (speechResult) {
             // User has spoken - process with OpenAI
             console.log(`User input received (Confidence: ${confidence})`);
+            
+            // Start recording on first speech (delayed recording approach)
+            await startRecordingOnFirstSpeech(context, event.CallSid);
             
             // Ensure static data is loaded (once per deployment)
             await ensureDataLoaded(context);
@@ -162,22 +230,7 @@ exports.handler = async function(context, event, callback) {
             // Small pause to let call stabilize
             twiml.pause({ length: 1 });
             
-            // Start recording if possible
-            if (event.CallSid) {
-                console.log('Attempting to start recording');
-                try {
-                    const client = context.getTwilioClient();
-                    const recording = await client.calls(event.CallSid).recordings.create({
-                        recordingChannels: 'dual',
-                        recordingTrack: 'both',
-                        recordingStatusCallback: '/recording-handler'
-                    });
-                    console.log('Recording started successfully:', recording.sid);
-                } catch (error) {
-                    console.log('Recording not available:', error.message);
-                    console.log('Continuing without recording');
-                }
-            }
+            console.log('📞 Initial call setup complete - recording will start on first speech input');
             
             // Gather for speech input
             const gather = twiml.gather({
