@@ -6,7 +6,7 @@ OPENAI_API_KEY=your-openai-api-key-here
 OPENAI_MODEL=gpt-3.5-turbo
 
 # Voice Configuration
-# Available voices: Polly.Joanna, Polly.Matthew, Polly.Amy, Polly.Brian, etc.
+# Available voices: Google.en-AU-Neural2-C, Polly.Matthew, Polly.Amy, Polly.Brian, etc.
 # See Twilio docs for full list of available voices
-VOICE=Polly.Joanna
+VOICE=Google.en-AU-Neural2-C
 LANGUAGE=en-US 
