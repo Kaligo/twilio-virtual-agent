@@ -1,0 +1,10 @@
+# Development and source files - don't deploy to Twilio
+src/
+
+# Environment and documentation files
+env-template.txt
+.env
+*.md
+README.md
+.git/
+node_modules/ 

@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "twilio-run",
-    "deploy": "twilio serverless:deploy --override-existing-project",
+    "compress": "node src/scripts/compress-knowledge-base.js",
+    "deploy": "npm run compress && twilio serverless:deploy --override-existing-project",
+    "deploy-raw": "twilio serverless:deploy --override-existing-project",
     "dev": "twilio-run --live",
     "logs": "twilio serverless:logs --service-sid ZSc40977817f55f8bdc3c5501924d1a2bb --environment dev --tail",
-    "try-conversation": "node test-ai-response.js"
+    "try-conversation": "node src/scripts/test-ai-response.js",
+    "test-openai": "node src/scripts/test-openai-key.js"
   },
   "dependencies": {
     "dotenv": "^17.2.0",
