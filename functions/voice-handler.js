@@ -198,10 +198,10 @@ exports.handler = async function(context, event, callback) {
                     // record: 'record-from-ringing-dual', // Commented out to preserve original recording
                     action: '/transfer-status',
                     method: 'POST'
-                }, '+18655516860');
+                }, '+17739851646');
                 
                 // Fallback message if transfer fails
-                twiml.say(voiceConfig, 'Sorry, I was unable to connect you. Please try calling our customer service directly at 865-551-6860.');
+                twiml.say(voiceConfig, 'Sorry, I was unable to connect you. Please try calling our customer service directly at +17739851646.');
                 
             } else {
                 // Normal conversation flow - provide AI response and continue
@@ -223,6 +223,43 @@ exports.handler = async function(context, event, callback) {
         } else if (isInitialCall) {
             // True initial call - welcome message with conversation start
             console.log('Initial call - starting welcome sequence');
+
+            const zendesk = require('node-zendesk');
+            // create zendesk client with ZENDESK_API_TOKEN
+            const zendeskClient = zendesk.createClient({
+                username: context.ZENDESK_LOGIN,
+                token: context.ZENDESK_API_TOKEN,
+                subdomain: context.ZENDESK_SUBDOMAIN
+            });
+            const ticket = await zendeskClient.tickets.create({
+                ticket: {
+                    subject: '[CBA AI demo] Incoming call from ' + event.From,
+                    comment: {
+                        body: 'Incoming call from ' + event.From + '. This call is handled by the AI agent.'
+                    },
+                    brand_id: '159743',
+                    requester: {
+                        name: event.From
+                    },
+                    tags: ['cba', 'demo', 'voice', 'ai_agent']
+                }
+            });
+
+            const mongodbPath = Runtime.getFunctions()['mongodb'].path;
+            const mongoModule = require(mongodbPath);
+            await new Promise((resolve, reject) => {
+                mongoModule.handler(context, {
+                    action: 'insert',
+                    callSid: event.CallSid,
+                    zendeskTicketId: ticket.result.id
+                }, (error, result) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        resolve(result);
+                    }
+                });
+            });
             
             // Welcome message (starts immediately)
             twiml.say(voiceConfig, 'Welcome To Yello Rewards');

@@ -1,17 +1,23 @@
 [
-    {
-        "id": "6f1b0d36-b979-4213-a693-dcd216a5f174",
-        "birthdate": "2004-01-15",
-        "email": "dakota@gmail.com",
-        "firstName": "Dakota",
-        "gender": "male",
-        "lastName": "Watsica",
-        "phoneNumber": "+61429867977",
-        "status": "active",
-        "pointsAccounts": [
-            {
-            "id": "f71d8bd9-4123-4bd5-a991-601e4cfbc1b0"
-            }
-        ]
-    }
+  {
+    "address": {
+      "countryCode": "AU"
+    },
+    "birthdate": "1966-04-24",
+    "email": "test@gmail.com",
+    "emailVerified": false,
+    "firstName": "Trenton",
+    "gender": "male",
+    "id": "54ba71df-2805-426a-a619-5a05ce275cdd",
+    "lastName": "O'Keefe",
+    "phoneNumber": "+61459737947",
+    "preferences": {
+      "pointsAccountId": "e78a2556-8203-44ba-bc8a-797c53ea3047"
+    },
+    "pointsAccounts": [
+      {
+        "id": "e78a2556-8203-44ba-bc8a-797c53ea3047"
+      }
+    ]
+  }
 ]
