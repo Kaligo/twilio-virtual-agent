@@ -27,6 +27,11 @@ exports.handler = async function(context, event, callback) {
             .transcripts(event.transcript_sid)
             .fetch();
 
+        const operatorResults = await client.intelligence.v2
+          .transcripts(event.transcript_sid)
+          .operatorResults.list({ limit: 100, redacted: false });
+        const summary = operatorResults.find(result => result.name === 'Conversation Summary');  
+
         // Only process completed transcripts
         if (transcript.status !== 'completed') {
             console.log(`Transcript not ready. Status: ${transcript.status}`);
@@ -90,7 +95,7 @@ exports.handler = async function(context, event, callback) {
         // create a new Zendesk comment with the transcript content
         console.log('Creating Zendesk comment with transcript content...');
         const comment = {
-            body: `Transcript for call ${callSid}:\n\n${transcriptContent}`,
+            body: `Transcript for call ${callSid}:\n\n[Summary]\n\n${summary?.textGenerationResults?.result}\n\n[Transcript]\n\n${transcriptContent}`,
             public: true
         };
     
