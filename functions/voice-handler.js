@@ -111,7 +111,7 @@ exports.handler = async function(context, event, callback) {
         // Get environment variables
         const openaiApiKey = context.OPENAI_API_KEY;
         const speechTimeout = parseInt(context.SPEECH_TIMEOUT) || 60;
-        const speechEndTimeout = parseInt(context.SPEECH_END_TIMEOUT) || 1.5;
+        const speechEndTimeout = parseInt(context.SPEECH_END_TIMEOUT) || 1;
         const voiceConfig = getVoiceConfig(context);
         
         // Check if OpenAI API key is available
@@ -182,13 +182,6 @@ exports.handler = async function(context, event, callback) {
             }
             
             console.log(`AI response generated successfully (${conversationHistory.length / 2} exchanges remembered)`);
-            
-            if (aiResponse.includes('Thank you for verifying')) {
-                conversationHistory.push({
-                    role: 'assistant',
-                    content: 'USER IS VERIFIED'
-                });
-            }
 
             // Check if AI response indicates a transfer request
             if (aiResponse.includes('Transferring to Yello customer service team')) {
