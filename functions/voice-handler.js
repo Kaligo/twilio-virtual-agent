@@ -95,8 +95,6 @@ async function ensureDataLoaded(context) {
     }
 }
 
-
-
 // Helper function to get voice configuration
 function getVoiceConfig(context) {
     return {
@@ -113,7 +111,7 @@ exports.handler = async function(context, event, callback) {
         // Get environment variables
         const openaiApiKey = context.OPENAI_API_KEY;
         const speechTimeout = parseInt(context.SPEECH_TIMEOUT) || 60;
-        const speechEndTimeout = parseInt(context.SPEECH_END_TIMEOUT) || 1;
+        const speechEndTimeout = parseInt(context.SPEECH_END_TIMEOUT) || 1.5;
         const voiceConfig = getVoiceConfig(context);
         
         // Check if OpenAI API key is available
@@ -179,8 +177,8 @@ exports.handler = async function(context, event, callback) {
             });
             
             // Limit conversation history to last 10 exchanges (20 messages) to avoid token limits
-            if (conversationHistory.length > 20) {
-                conversationHistory = conversationHistory.slice(-20);
+            if (conversationHistory.length > 100) {
+                conversationHistory = conversationHistory.slice(-100);
             }
             
             console.log(`AI response generated successfully (${conversationHistory.length / 2} exchanges remembered)`);
@@ -321,14 +319,18 @@ async function generateAIResponse(openai, userInput, systemPrompt, conversationH
         // Build enhanced prompt with context (using cached compressed data)
         const knowledgeBaseJson = JSON.stringify(cachedKnowledgeBase);
         const enhancedPrompt = `${systemPrompt}\n\nKnowledge Base for reference:\n${knowledgeBaseJson}\n\nImportant: Keep responses to 1-2 sentences maximum for voice conversation.`;
-        
+
         console.log('Processing AI request for user input:', userInput);
-        
-        // Build messages with conversation history
+
+        // Build messages with conversation history, making it explicit for the AI
         const messages = [
             {
                 role: 'system',
                 content: enhancedPrompt
+            },
+            {
+                role: 'system',
+                content: 'The following messages are the conversation history between the user and the assistant so far. Use this history to maintain context and continuity in your responses.'
             },
             ...conversationHistory,  // Include previous conversation
             {
@@ -336,18 +338,18 @@ async function generateAIResponse(openai, userInput, systemPrompt, conversationH
                 content: userInput
             }
         ];
-        
+
         const completion = await openai.chat.completions.create({
             model: context.OPENAI_MODEL || 'gpt-4.1-mini',
             messages: messages,
             max_tokens: 150,
             temperature: 0.25,
         });
-        
+
         const response = completion.choices[0].message.content.trim();
         console.log('OpenAI response received:', response);
         return response;
-        
+
     } catch (error) {
         console.error('Error generating AI response:', error);
         return 'I am having trouble right now';

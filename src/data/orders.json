@@ -80,7 +80,8 @@
       "receiveConvoyWebhookAt": "nil",
       "tenantCurrencyShortName": "Rewards Points",
       "loyaltyCurrencyShortName": "Carbon credits (kg)",
-      "transferConnectIdentifier": "PATCH"
+      "transferConnectIdentifier": "PATCH",
+      "errorMessage": "Membership number is invalid or missing"
     }
   },
   {

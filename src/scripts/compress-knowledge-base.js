@@ -16,7 +16,9 @@ async function loadAllDataFiles() {
         orders: [],
         pointsActivities: [],
         pointsAccounts: [],
-        faq: []
+        faq: [],
+        giftCards: [],
+        loyaltyPrograms: []
     };
     
     const dataFiles = [
@@ -24,7 +26,9 @@ async function loadAllDataFiles() {
         { key: 'orders', file: 'orders.json' },
         { key: 'pointsActivities', file: 'points-activities.json' },
         { key: 'pointsAccounts', file: 'points-accounts.json' },
-        { key: 'faq', file: 'faq.json' }
+        { key: 'faq', file: 'faq.json' },
+        { key: 'giftCards', file: 'gift-cards.json' },
+        { key: 'loyaltyPrograms', file: 'loyalty-programs.json' }
     ];
     
     let totalItems = 0;

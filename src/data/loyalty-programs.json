@@ -1,0 +1,499 @@
+[
+  {
+    "id": "1bd364dd-3484-4600-bd8e-fbbfbd74accf",
+    "name": "CbaDemoRcUs Rewards",
+    "shortName": "CbaDemoRcUs Rewards",
+    "category": "airline",
+    "description": null,
+    "active": true,
+    "sortIndex": 1121126,
+    "redeemable": true,
+    "processingDelay": 0,
+    "loyaltyCurrency": {
+      "id": "1150044b-a77d-4f4f-874a-8ec3f20400e2",
+      "type": "loyalty_currency",
+      "name": "Rewards Points",
+      "shortName": "Rewards Points"
+    },
+    "transferRate": {
+      "id": "949db363-4509-4433-a2c1-b59baece4c1d",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "1150044b-a77d-4f4f-874a-8ec3f20400e2",
+      "denomination": 1000,
+      "targetDenomination": 1000,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999000,
+      "exchangeRate": 1,
+      "targetMinimumTransfer": 1000,
+      "targetMaximumTransfer": 999000
+    },
+    "capabilities": [
+      {
+        "id": "cbd09910-c400-4f68-ac2d-8a1610ea8487",
+        "type": "capability",
+        "detailsUrl": null,
+        "logoUrl": null,
+        "conditionsUrl": null,
+        "enrollmentUrl": null,
+        "processingDelay": 0,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14109,
+        "secondaryLogoUrl": null
+      }
+    ]
+  },
+  {
+    "id": "d0e7d6b0-75be-4e76-97db-c63da67b7437",
+    "name": "airasia rewards",
+    "shortName": "airasia rewards",
+    "category": "airline",
+    "description": "As an airasia member, you enjoy comprehensive lifestyle rewards that goes beyond airasia flights with a diverse range of partners across lifestyle, travel and financial services categories. You can use airasia points to pay for flights, hotels and a variety of everyday lifestyle deals on airasia Super App for greater savings!",
+    "active": true,
+    "sortIndex": 1121819,
+    "redeemable": true,
+    "processingDelay": 172800,
+    "loyaltyCurrency": {
+      "id": "2a0d0c40-c54a-477d-b4f2-6653e3bf31c7",
+      "type": "loyalty_currency",
+      "name": "airasia points",
+      "shortName": "airasia points"
+    },
+    "transferRate": {
+      "id": "700cf5fa-b319-4157-860d-fc5b3287a6f9",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "2a0d0c40-c54a-477d-b4f2-6653e3bf31c7",
+      "denomination": 1000,
+      "targetDenomination": 1000,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999000,
+      "exchangeRate": 1,
+      "targetMinimumTransfer": 1000,
+      "targetMaximumTransfer": 999000
+    },
+    "capabilities": [
+      {
+        "id": "8416a8dd-3ae0-466e-8b59-d8e41a60fbc0",
+        "type": "capability",
+        "detailsUrl": null,
+        "logoUrl": "https://kaligo.imgix.net/logos/AABIG.en.png",
+        "conditionsUrl": "https://www.airasia.com/aa/rewards/en/gb/terms-and-conditions.html",
+        "enrollmentUrl": "https://www.airasia.com/member/en/gb?signupTab=true",
+        "processingDelay": 172800,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14802,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/AABIG-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "d997feb2-8ba4-4d2b-a4b8-bc8121dad2be",
+    "name": "Flying Blue",
+    "shortName": "Flying Blue",
+    "category": "airline",
+    "description": "Flying Blue, the loyalty programme of the Air France-KLM Group, has 18 million members and includes 39 airlines and over 100 non-airline partners. Each time members travel, they can earn Miles and use them to pay for other flights, car rentals, trips and more.",
+    "active": true,
+    "sortIndex": 1121820,
+    "redeemable": true,
+    "processingDelay": 86400,
+    "loyaltyCurrency": {
+      "id": "dfdc2500-eb49-42aa-b888-b683aeddef24",
+      "type": "loyalty_currency",
+      "name": "Flying Blue Miles",
+      "shortName": "Miles"
+    },
+    "transferRate": {
+      "id": "a06277c1-9226-488f-b494-ee769e00b3bb",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "dfdc2500-eb49-42aa-b888-b683aeddef24",
+      "denomination": 100,
+      "targetDenomination": 100,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999000,
+      "exchangeRate": 1,
+      "targetMinimumTransfer": 1000,
+      "targetMaximumTransfer": 999000
+    },
+    "capabilities": [
+      {
+        "id": "e058be67-80f6-4daa-89c0-469bca0e11cd",
+        "type": "capability",
+        "detailsUrl": "https://www.flyingblue.com/about-flyingblue.html",
+        "logoUrl": "https://kaligo.imgix.net/logos/AFFLYINGBLUE.en.png",
+        "conditionsUrl": "https://img.static-fb.com/m/210bf6c67e0bebac/original/Fbcom_Terms-and-Conditions-EN.pdf",
+        "enrollmentUrl": "https://www.flyingblue.com",
+        "processingDelay": 86400,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14803,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/AFFLYINGBLUE-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "92ebdc4d-ffa2-4c97-bdb6-a1fc07935d51",
+    "name": "Aeromexico Rewards",
+    "shortName": "Aeromexico Rewards",
+    "category": "airline",
+    "description": "Aeromexico Rewards is the most recognized loyalty program in Mexico, which allows you to experience the world around you in a unique way.\n\nAeromexico Rewards allows members to earn and use their Aeromexico Rewards Points for flights to over 1,000 destinations through Aeromexico and SkyTeam Airline alliance, for stays at over 400,000 hotels, and for purchasing more than 50,000 items and unique experiences.",
+    "active": true,
+    "sortIndex": 1121821,
+    "redeemable": true,
+    "processingDelay": 86400,
+    "loyaltyCurrency": {
+      "id": "7cc05718-18ae-44a3-a0d7-144905f8e9a7",
+      "type": "loyalty_currency",
+      "name": "Aeromexico Reward Points",
+      "shortName": "Points"
+    },
+    "transferRate": {
+      "id": "711946b6-d52a-4107-a0d3-54a91121cb6c",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "7cc05718-18ae-44a3-a0d7-144905f8e9a7",
+      "denomination": 100,
+      "targetDenomination": 100,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999000,
+      "exchangeRate": 1,
+      "targetMinimumTransfer": 1000,
+      "targetMaximumTransfer": 999000
+    },
+    "capabilities": [
+      {
+        "id": "5d6c1cc0-5896-45f7-a10d-a120f8c8d203",
+        "type": "capability",
+        "detailsUrl": "https://www.aeromexicorewards.com/us/welcome/ ",
+        "logoUrl": "https://kaligo.imgix.net/logos/AMCLUBPREMIER.en.png",
+        "conditionsUrl": "https://www.clubpremier.com/us/about-club-premier/program-terms-and-conditions/",
+        "enrollmentUrl": "https://member.aeromexicorewards.com/registro",
+        "processingDelay": 86400,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14804,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/AMCLUBPREMIER-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "0f8745e4-d772-4177-9f6b-9e3e1f6b7ede",
+    "name": "Cathay",
+    "shortName": "Cathay",
+    "category": "airline",
+    "description": "Cathay brought everything you value about Marco Polo Club and Asia Miles, from benefits to rewards, together in one place. Our elevated programme makes it easier for you to earn while you spend and make the most of your rewards.",
+    "active": true,
+    "sortIndex": 1121822,
+    "redeemable": true,
+    "processingDelay": 86400,
+    "loyaltyCurrency": {
+      "id": "1c554ed9-f43e-48c3-99a7-d6bdc74d4952",
+      "type": "loyalty_currency",
+      "name": "Asia Miles",
+      "shortName": "Miles"
+    },
+    "transferRate": {
+      "id": "68de0013-299c-43d2-b14d-4a11e0e3051c",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "1c554ed9-f43e-48c3-99a7-d6bdc74d4952",
+      "denomination": 150,
+      "targetDenomination": 100,
+      "minimumTransfer": 1500,
+      "maximumTransfer": 1498500,
+      "exchangeRate": 0.66666666,
+      "targetMinimumTransfer": 1000,
+      "targetMaximumTransfer": 999000
+    },
+    "capabilities": [
+      {
+        "id": "224515f3-745a-427f-a435-2fbed01b0b27",
+        "type": "capability",
+        "detailsUrl": "https://www.cathaypacific.com",
+        "logoUrl": "https://kaligo.imgix.net/logos/CXASIAMILES.en.png",
+        "conditionsUrl": "https://www.cathaypacific.com/cx/en_HK/legal-and-privacy/cathay-membership-terms-and-conditions.html",
+        "enrollmentUrl": "https://www.cathaypacific.com/cx/en_HK/membership/sign-up.html",
+        "processingDelay": 86400,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14805,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/CXASIAMILES-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "4bf7575c-0c51-40f7-aaa7-1027ae7adfc1",
+    "name": "avianca lifemiles",
+    "shortName": "avianca lifemiles",
+    "category": "airline",
+    "description": "Welcome to Avianca LifeMiles. Avianca´s frequent flyer program. Avianca LifeMiles offers you a wide variety of options to earn and redeem miles from, such as flights with Avianca Airlines or any StarAlliance airline, car rentals, hotel stays, and experiences. There are hundreds of redemptions rewards options, including to over 1,300 destinations around the world.",
+    "active": true,
+    "sortIndex": 1121823,
+    "redeemable": true,
+    "processingDelay": 86400,
+    "loyaltyCurrency": {
+      "id": "875fb24c-c43a-4221-8f80-a0cccf92963c",
+      "type": "loyalty_currency",
+      "name": "LifeMiles",
+      "shortName": "miles"
+    },
+    "transferRate": {
+      "id": "4e780b22-ec81-41cc-add5-ad7fbd2b4469",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "875fb24c-c43a-4221-8f80-a0cccf92963c",
+      "denomination": 100,
+      "targetDenomination": 100,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999000,
+      "exchangeRate": 1,
+      "targetMinimumTransfer": 1000,
+      "targetMaximumTransfer": 999000
+    },
+    "capabilities": [
+      {
+        "id": "72a71440-5007-4baf-8a5f-e52ea5d350ff",
+        "type": "capability",
+        "detailsUrl": "https://www.lifemiles.com/",
+        "logoUrl": "https://kaligo.imgix.net/logos/AVLIFEMILES.en.png",
+        "conditionsUrl": "https://www.lifemiles.com/terms-conditions",
+        "enrollmentUrl": "https://www.lifemiles.com/enrollment/step/1",
+        "processingDelay": 86400,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14806,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/AVLIFEMILES-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "7f24264a-3bbb-4328-b83d-3b04ed2936fd",
+    "name": "Emirates Skywards",
+    "shortName": "Emirates Skywards",
+    "category": "airline",
+    "description": "Emirates Skywards, the award-winning loyalty programme of Emirates and flydubai, offers four tiers of membership - Blue, Silver, Gold and Platinum - with each membership tier providing exclusive privileges. Emirates Skywards members earn Skywards Miles when they fly on Emirates, flydubai or partner airlines, or when they use the programme’s designated hotels, car rentals, financial, leisure and lifestyle partners. Skywards Miles can be redeemed for an extensive range of rewards, including tickets on Emirates or flydubai plus Emirates Skywards partner airlines, hotel accommodation, excursions and exclusive shopping.  Visit Emirates Skywards online at: www.emirates.com/skywards. ",
+    "active": true,
+    "sortIndex": 1121824,
+    "redeemable": true,
+    "processingDelay": 86400,
+    "loyaltyCurrency": {
+      "id": "cd7b3cbd-6ebf-4f88-afbc-34975330fff7",
+      "type": "loyalty_currency",
+      "name": "Skywards Miles",
+      "shortName": "Miles"
+    },
+    "transferRate": {
+      "id": "8c57a546-0d9a-4052-bbbc-52e7846b9a76",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "cd7b3cbd-6ebf-4f88-afbc-34975330fff7",
+      "denomination": 1000,
+      "targetDenomination": 1000,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999000,
+      "exchangeRate": 1,
+      "targetMinimumTransfer": 1000,
+      "targetMaximumTransfer": 999000
+    },
+    "capabilities": [
+      {
+        "id": "f9883d10-9d28-45d6-b08f-e2e48223ff42",
+        "type": "capability",
+        "detailsUrl": "https://www.emirates.com/english/skywards/",
+        "logoUrl": "https://kaligo.imgix.net/logos/EKSKYWARDS.en.png",
+        "conditionsUrl": "https://www.emirates.com/english/skywards/emirates-skywards-programme-rules/",
+        "enrollmentUrl": "https://www.emirates.com/account/us/english/light-registration/",
+        "processingDelay": 86400,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14807,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/EKSKYWARDS-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "16c1d89d-4753-4363-958e-285f06259002",
+    "name": "British Airways Executive Club",
+    "shortName": "British Airways Executive Club",
+    "category": "airline",
+    "description": "The British Airways Executive Club helps make travel more rewarding. Plus, it’s free to join. \n\nAs a Member you can collect Avios, the reward currency of the Executive Club, every time you fly with British Airways or any of our oneworld® partner airlines, stay at a hotel or rent a car with Avis - or simply by using your credit card for all your shopping.  \n\nWith so many ways to collect, you'll soon have enough Avios to spend on all of the travel things you love, including reward flights and cabin upgrades. \n\nJoin today (link Join today to: \"https://www.britishairways.com/executive-club/about-the-club\")",
+    "active": true,
+    "sortIndex": 1121825,
+    "redeemable": true,
+    "processingDelay": 86400,
+    "loyaltyCurrency": {
+      "id": "b6f74b51-0b0d-4383-8a3f-d67040a8791d",
+      "type": "loyalty_currency",
+      "name": "Avios",
+      "shortName": "Avios"
+    },
+    "transferRate": {
+      "id": "0c240b48-5f27-40d2-a176-3a4b01097a38",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "b6f74b51-0b0d-4383-8a3f-d67040a8791d",
+      "denomination": 100,
+      "targetDenomination": 100,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999000,
+      "exchangeRate": 1,
+      "targetMinimumTransfer": 1000,
+      "targetMaximumTransfer": 999000
+    },
+    "capabilities": [
+      {
+        "id": "118f35a9-4508-4df7-9792-3814b1e05762",
+        "type": "capability",
+        "detailsUrl": "https://www.britishairways.com/en-us/executive-club/about-the-club",
+        "logoUrl": "https://kaligo.imgix.net/logos/BAAVIOS.en.png",
+        "conditionsUrl": "https://www.britishairways.com/en-us/executive-club/terms-and-conditions",
+        "enrollmentUrl": "https://www.britishairways.com/travel/execenrol/public/en_sg?campaignCode=ABOUEC&clickpage=executive-club--about-the-club--index&kmtag=c&ban=||BC|1|CTA1|||||||||L2|||||||",
+        "processingDelay": 86400,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14809,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/BAAVIOS-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "7fa8b2f7-324c-4a96-b326-6f564dfacaaf",
+    "name": "Uber",
+    "shortName": "Uber",
+    "category": "voucher",
+    "description": "<b>Uber Rides</b> <br>We reimagine the way the world moves for the better. <br>Convert your loyalty points to Uber vouchers, which you can use for rides in more than 10,000 cities in over 70 countries worldwide. With Uber, your destination is at your fingertips. Just open the app and enter where you're going, and a nearby driver will help you get there. <br><br>Find out more at https://www.uber.com/<br><br><b>Uber Eats</b> <br>Uber Eats is the easy way to get the food you love delivered. <br>Convert your loyalty points to Uber Eats vouchers, which you can use to order your favourite meal in more than 10,000 cities worldwide. <br><br>Find out more at https://www.ubereats.com/",
+    "active": true,
+    "sortIndex": 1121826,
+    "redeemable": true,
+    "processingDelay": 86400,
+    "loyaltyCurrency": {
+      "id": "3647d060-09d6-44f5-b766-51706cc42b54",
+      "type": "loyalty_currency",
+      "name": "Uber Credits (USD)",
+      "shortName": "Uber Credits (USD)"
+    },
+    "transferRate": {
+      "id": "82fe5ffd-f068-48dc-8343-24cfe78ce3fb",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "3647d060-09d6-44f5-b766-51706cc42b54",
+      "denomination": 100,
+      "targetDenomination": 1,
+      "minimumTransfer": 100,
+      "maximumTransfer": 999000,
+      "exchangeRate": 0.01,
+      "targetMinimumTransfer": 1,
+      "targetMaximumTransfer": 9990
+    },
+    "capabilities": [
+      {
+        "id": "bd46c6b5-f1a0-48c1-bedb-51cda4fd1eb2",
+        "type": "capability",
+        "detailsUrl": "",
+        "logoUrl": "https://kaligo.imgix.net/logos/UBER.en.png",
+        "conditionsUrl": "https://www.uber.com/legal/en/document/?country=united-states&lang=en&name=uber-for-business-product-addendum---vouchers",
+        "enrollmentUrl": "https://www.uber.com/",
+        "processingDelay": 86400,
+        "category": "points_transfer",
+        "config": {},
+        "sortIndex": 14810,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/UBER-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "2bb1cd28-342f-497a-9132-05ab85c85bb1",
+    "name": "Patch",
+    "shortName": "Patch",
+    "category": "sustainability",
+    "description": "Patch can enable banks, travel platforms, and retailers to deliver carbon removal as an alternative reward type. End users are able to redeem points at a portfolio of Patch-powered carbon offset and removal projects, rather than redeeming for statement credit or ticket/product purchases.",
+    "active": true,
+    "sortIndex": 1121827,
+    "redeemable": true,
+    "processingDelay": 432000,
+    "loyaltyCurrency": {
+      "id": "f546da17-74fc-4749-8a29-2488e2f51391",
+      "type": "loyalty_currency",
+      "name": "Carbon credits (kg)",
+      "shortName": "Carbon credits (kg)"
+    },
+    "transferRate": {
+      "id": "0235d78c-58f0-43a6-b01d-73c429606ae6",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "f546da17-74fc-4749-8a29-2488e2f51391",
+      "denomination": 5,
+      "targetDenomination": 1,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999900,
+      "exchangeRate": 0.2,
+      "targetMinimumTransfer": 200,
+      "targetMaximumTransfer": 199980
+    },
+    "capabilities": [
+      {
+        "id": "38f23acc-f2fe-46fa-88f4-596f42545da7",
+        "type": "capability",
+        "detailsUrl": "https://www.patch.io",
+        "logoUrl": "https://kaligo.imgix.net/logos/PATCH.en.png",
+        "conditionsUrl": "https://www.patch.io/terms",
+        "enrollmentUrl": "https://www.patch.io",
+        "processingDelay": 432000,
+        "category": "points_transfer",
+        "config": {
+          "fulfillment": {
+            "requireConversion": {
+              "to": "grams",
+              "from": "kilograms"
+            }
+          }
+        },
+        "sortIndex": 14811,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/PATCH-2.en.png"
+      }
+    ]
+  },
+  {
+    "id": "465eadb1-910d-4b98-87d1-487da2f21bbe",
+    "name": "USD Coin",
+    "shortName": "USDC",
+    "category": "crypto",
+    "description": "Gemini is a cryptocurrency platform with a website and a mobile app for buying, selling, storing, and spending cryptocurrencies. Its major selling points are security and ease of use. It supports trading in more than 120 cryptocurrencies and has its own currency, the Gemini stablecoin.",
+    "active": true,
+    "sortIndex": 1121828,
+    "redeemable": true,
+    "processingDelay": 86400,
+    "loyaltyCurrency": {
+      "id": "ba4d1c1b-4a0c-4825-98a9-c42a1e5ff1ca",
+      "type": "loyalty_currency",
+      "name": "USDC",
+      "shortName": "USDC"
+    },
+    "transferRate": {
+      "id": "f41ffabb-cf1b-4c84-b6f5-ef1ddc116bc6",
+      "type": "points_transfer_rate",
+      "loyaltyCurrencyId": "ba4d1c1b-4a0c-4825-98a9-c42a1e5ff1ca",
+      "denomination": 1000,
+      "targetDenomination": 9,
+      "minimumTransfer": 1000,
+      "maximumTransfer": 999000,
+      "exchangeRate": 0.009,
+      "targetMinimumTransfer": 9,
+      "targetMaximumTransfer": 8991
+    },
+    "capabilities": [
+      {
+        "id": "c7fb00b6-d330-4f71-bd66-472d4735d20f",
+        "type": "capability",
+        "detailsUrl": "https://www.gemini.com/about",
+        "logoUrl": "https://kaligo.imgix.net/logos/GEMINI.en.png",
+        "conditionsUrl": "https://www.gemini.com/legal",
+        "enrollmentUrl": "https://exchange.gemini.com/register",
+        "processingDelay": 86400,
+        "category": "points_transfer",
+        "config": {
+          "fulfillment": {
+            "cryptoCurrencies": [
+              "usdc"
+            ]
+          }
+        },
+        "sortIndex": 14812,
+        "secondaryLogoUrl": "https://kaligo.imgix.net/logos/GEMINI-2.en.png"
+      }
+    ]
+  }
+]
