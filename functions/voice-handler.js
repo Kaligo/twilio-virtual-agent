@@ -183,6 +183,13 @@ exports.handler = async function(context, event, callback) {
             
             console.log(`AI response generated successfully (${conversationHistory.length / 2} exchanges remembered)`);
             
+            if (aiResponse.includes('Thank you for verifying')) {
+                conversationHistory.push({
+                    role: 'assistant',
+                    content: 'USER IS VERIFIED'
+                });
+            }
+
             // Check if AI response indicates a transfer request
             if (aiResponse.includes('Transferring to Yello customer service team')) {
                 console.log('Transfer request detected - connecting to Yello customer service');
