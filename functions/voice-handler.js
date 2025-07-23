@@ -263,7 +263,7 @@ exports.handler = async function(context, event, callback) {
             twiml.say(voiceConfig, 'Welcome To Yello Rewards');
             
             // Small pause to let call stabilize
-            twiml.pause({ length: 1 });
+            twiml.pause({ length: 0.5 });
             
             console.log('📞 Initial call setup complete - recording will start on first speech input');
             
