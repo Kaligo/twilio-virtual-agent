@@ -9,4 +9,31 @@ OPENAI_MODEL=gpt-3.5-turbo
 # Available voices: Google.en-AU-Neural2-C, Polly.Matthew, Polly.Amy, Polly.Brian, etc.
 # See Twilio docs for full list of available voices
 VOICE=Google.en-AU-Neural2-C
-LANGUAGE=en-US 
+LANGUAGE=en-US
+
+# Conversational Intelligence Configuration
+# Create a CI Service in Twilio Console and add the Service SID here
+# This enables automatic transcript creation from call recordings
+CI_SERVICE_SID=your-ci-service-sid-here
+
+# MongoDB Configuration
+# MongoDB connection string - replace with your actual connection string
+# Examples:
+# Local: mongodb://localhost:27017/
+# Atlas: mongodb+srv://username:password@cluster.mongodb.net/
+MONGODB_URI=your-mongodb-connection-string-here
+MONGODB_DATABASE=twilioapp
+
+# Zendesk Configuration
+# Your Zendesk login email and API token
+# Get API token from: Zendesk Admin > Apps and integrations > APIs > Zendesk API
+ZENDESK_LOGIN=your-email@company.com
+ZENDESK_API_TOKEN=your-zendesk-api-token-here
+# Your Zendesk subdomain (e.g., if your Zendesk is at mycompany.zendesk.com, use 'mycompany')
+ZENDESK_SUBDOMAIN=your-zendesk-subdomain-here
+# Optional: Your Zendesk API URL (if using a custom subdomain)
+ZENDESK_URL=https://yourcompany.zendesk.com/api/v2
+
+# Optional: Custom webhook timeout settings
+SPEECH_TIMEOUT=60
+SPEECH_END_TIMEOUT=1 

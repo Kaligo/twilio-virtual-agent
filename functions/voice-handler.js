@@ -95,8 +95,6 @@ async function ensureDataLoaded(context) {
     }
 }
 
-
-
 // Helper function to get voice configuration
 function getVoiceConfig(context) {
     return {
@@ -179,12 +177,12 @@ exports.handler = async function(context, event, callback) {
             });
             
             // Limit conversation history to last 10 exchanges (20 messages) to avoid token limits
-            if (conversationHistory.length > 20) {
-                conversationHistory = conversationHistory.slice(-20);
+            if (conversationHistory.length > 100) {
+                conversationHistory = conversationHistory.slice(-100);
             }
             
             console.log(`AI response generated successfully (${conversationHistory.length / 2} exchanges remembered)`);
-            
+
             // Check if AI response indicates a transfer request
             if (aiResponse.includes('Transferring to Yello customer service team')) {
                 console.log('Transfer request detected - connecting to Yello customer service');
@@ -195,13 +193,13 @@ exports.handler = async function(context, event, callback) {
                 // Transfer the call to the specified number
                 twiml.dial({
                     timeout: 30,
-                    record: 'record-from-ringing-dual',
+                    // record: 'record-from-ringing-dual', // Commented out to preserve original recording
                     action: '/transfer-status',
                     method: 'POST'
-                }, '+18655516860');
+                }, '+17739851646');
                 
                 // Fallback message if transfer fails
-                twiml.say(voiceConfig, 'Sorry, I was unable to connect you. Please try calling our customer service directly at 865-551-6860.');
+                twiml.say(voiceConfig, 'Sorry, I was unable to connect you. Please try calling our customer service directly at +17739851646.');
                 
             } else {
                 // Normal conversation flow - provide AI response and continue
@@ -223,12 +221,49 @@ exports.handler = async function(context, event, callback) {
         } else if (isInitialCall) {
             // True initial call - welcome message with conversation start
             console.log('Initial call - starting welcome sequence');
+
+            const zendesk = require('node-zendesk');
+            // create zendesk client with ZENDESK_API_TOKEN
+            const zendeskClient = zendesk.createClient({
+                username: context.ZENDESK_LOGIN,
+                token: context.ZENDESK_API_TOKEN,
+                subdomain: context.ZENDESK_SUBDOMAIN
+            });
+            const ticket = await zendeskClient.tickets.create({
+                ticket: {
+                    subject: '[CBA AI demo] Incoming call from ' + event.From,
+                    comment: {
+                        body: 'Incoming call from ' + event.From + '. This call is handled by the AI agent.'
+                    },
+                    brand_id: '159743',
+                    requester: {
+                        name: event.From
+                    },
+                    tags: ['cba', 'demo', 'voice', 'ai_agent']
+                }
+            });
+
+            const mongodbPath = Runtime.getFunctions()['mongodb'].path;
+            const mongoModule = require(mongodbPath);
+            await new Promise((resolve, reject) => {
+                mongoModule.handler(context, {
+                    action: 'insert',
+                    callSid: event.CallSid,
+                    zendeskTicketId: ticket.result.id
+                }, (error, result) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        resolve(result);
+                    }
+                });
+            });
             
             // Welcome message (starts immediately)
             twiml.say(voiceConfig, 'Welcome To Yello Rewards');
             
             // Small pause to let call stabilize
-            twiml.pause({ length: 1 });
+            twiml.pause({ length: 0.5 });
             
             console.log('📞 Initial call setup complete - recording will start on first speech input');
             
@@ -284,14 +319,18 @@ async function generateAIResponse(openai, userInput, systemPrompt, conversationH
         // Build enhanced prompt with context (using cached compressed data)
         const knowledgeBaseJson = JSON.stringify(cachedKnowledgeBase);
         const enhancedPrompt = `${systemPrompt}\n\nKnowledge Base for reference:\n${knowledgeBaseJson}\n\nImportant: Keep responses to 1-2 sentences maximum for voice conversation.`;
-        
+
         console.log('Processing AI request for user input:', userInput);
-        
-        // Build messages with conversation history
+
+        // Build messages with conversation history, making it explicit for the AI
         const messages = [
             {
                 role: 'system',
                 content: enhancedPrompt
+            },
+            {
+                role: 'system',
+                content: 'The following messages are the conversation history between the user and the assistant so far. Use this history to maintain context and continuity in your responses.'
             },
             ...conversationHistory,  // Include previous conversation
             {
@@ -299,18 +338,18 @@ async function generateAIResponse(openai, userInput, systemPrompt, conversationH
                 content: userInput
             }
         ];
-        
+
         const completion = await openai.chat.completions.create({
-            model: context.OPENAI_MODEL || 'gpt-3.5-turbo',
+            model: context.OPENAI_MODEL || 'gpt-4.1-mini',
             messages: messages,
             max_tokens: 150,
-            temperature: 0.3,
+            temperature: 0.25,
         });
-        
+
         const response = completion.choices[0].message.content.trim();
         console.log('OpenAI response received:', response);
         return response;
-        
+
     } catch (error) {
         console.error('Error generating AI response:', error);
         return 'I am having trouble right now';

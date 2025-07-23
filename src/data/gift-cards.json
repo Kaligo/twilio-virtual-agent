@@ -1,0 +1,375 @@
+[
+  {
+    "id": "99954627-c9fe-4b34-b7d5-bf9f45a506e3",
+    "name": "Asos",
+    "categories": [
+      "fashion"
+    ],
+    "description": "With the goal of helping everyone be who they want to be, ASOS offers over 80,000 branded and own-brand products. And if you're looking for new ways to engage with, reward and motivate existing staff, alongside attracting new employees, this is where ASOS gift cards come in.",
+    "shortDescription": null,
+    "redemptionInstructions": [],
+    "countryCodes": [
+      "AU"
+    ],
+    "currency": "AUD",
+    "deliveryMethod": "email",
+    "redemptionChannel": "redeem_online",
+    "markup": {
+      "type": "percentage",
+      "value": 0
+    },
+    "margin": {
+      "type": "percentage",
+      "value": 0.052
+    },
+    "maxDiscountPercentage": 0,
+    "denominations": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      50,
+      75,
+      100,
+      150,
+      200,
+      500
+    ],
+    "displayTypes": [
+      "digital"
+    ],
+    "type": "digital",
+    "active": true,
+    "approved": true,
+    "createdAt": "2025-07-18T05:53:11.113Z",
+    "supplierDenominations": {
+      "ranged": {
+        "min": 5,
+        "max": 500
+      }
+    },
+    "supplier": "merit",
+    "validityInDays": 3652,
+    "countryCode": "AU"
+  },
+  {
+    "id": "0e7a3c75-28ab-4ae1-8faa-967c226be878",
+    "name": "Gifti Global (Global Marketplace for Gift Cards)",
+    "categories": [
+      "malls_and_hypermarkets"
+    ],
+    "description": "Gifti Global card is the first global gift card that can be exchanged against any gift card in any currency across the world. It’s super easy to use. Customers can just log into their Gifti Global account,  click on Gifti Global Points under My Account, enter the card number and their Gifti Global points are just literally a click away",
+    "shortDescription": null,
+    "redemptionInstructions": [],
+    "countryCodes": [
+      "AU"
+    ],
+    "currency": "AUD",
+    "deliveryMethod": "email",
+    "redemptionChannel": "redeem_online",
+    "markup": {
+      "type": "percentage",
+      "value": 0
+    },
+    "margin": {
+      "type": "percentage",
+      "value": 0.015
+    },
+    "maxDiscountPercentage": 0,
+    "denominations": [
+      50,
+      75,
+      100,
+      150,
+      200,
+      500
+    ],
+    "displayTypes": [
+      "digital"
+    ],
+    "type": "digital",
+    "active": true,
+    "approved": true,
+    "createdAt": "2025-07-18T05:53:11.140Z",
+    "supplierDenominations": {
+      "ranged": {
+        "min": 50,
+        "max": 5000
+      }
+    },
+    "supplier": "merit",
+    "validityInDays": 365,
+    "countryCode": "AU"
+  },
+  {
+    "id": "6cc0a4b8-ff8f-43f7-bf30-b8d59f61ac78",
+    "name": "Cue",
+    "categories": [
+      "fashion"
+    ],
+    "description": "Creativity, innovation and a youthful energy are the Cue way. All Cue designs are original and feature the Cue signatures: sharp tailoring, statement prints and luxurious fabrics. Cue is Australia’s largest manufacturer of women’s fashion, as recognised by Ethical Clothing Australia.",
+    "shortDescription": null,
+    "redemptionInstructions": [],
+    "countryCodes": [
+      "AU"
+    ],
+    "currency": "AUD",
+    "deliveryMethod": "email",
+    "redemptionChannel": "redeem_online_and_instore",
+    "markup": {
+      "type": "percentage",
+      "value": 0
+    },
+    "margin": {
+      "type": "percentage",
+      "value": 0.024
+    },
+    "maxDiscountPercentage": 0,
+    "denominations": [
+      20,
+      25,
+      50,
+      100,
+      150,
+      200,
+      500
+    ],
+    "displayTypes": [
+      "digital"
+    ],
+    "type": "digital",
+    "active": true,
+    "approved": true,
+    "createdAt": "2025-07-18T05:53:10.402Z",
+    "supplierDenominations": {
+      "fixed": [
+        20,
+        25,
+        50,
+        100,
+        150,
+        200,
+        250,
+        500
+      ]
+    },
+    "supplier": "merit",
+    "validityInDays": 1095,
+    "countryCode": "AU"
+  },
+  {
+    "id": "f81cfb54-92de-4c4b-b9a4-d738014db747",
+    "name": "Amazon",
+    "categories": [
+      "online_shopping"
+    ],
+    "description": "Amazon.com.au Gift Cards can be used to purchase millions of items sold on Amazon.com.au today – from electronics to fashion to appliances and household items. Amazon.com.au Gift Cards can be added to your balance and used as per your convenience.",
+    "shortDescription": null,
+    "redemptionInstructions": [],
+    "countryCodes": [
+      "AU"
+    ],
+    "currency": "AUD",
+    "deliveryMethod": "email",
+    "redemptionChannel": "redeem_online",
+    "markup": {
+      "type": "percentage",
+      "value": 0
+    },
+    "margin": {
+      "type": "percentage",
+      "value": 0.036
+    },
+    "maxDiscountPercentage": 0,
+    "denominations": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      50,
+      75,
+      100,
+      150,
+      200,
+      500
+    ],
+    "displayTypes": [
+      "digital"
+    ],
+    "type": "digital",
+    "active": true,
+    "approved": true,
+    "createdAt": "2025-07-18T05:53:10.896Z",
+    "supplierDenominations": {
+      "ranged": {
+        "min": 1,
+        "max": 2000
+      }
+    },
+    "supplier": "merit",
+    "validityInDays": -1,
+    "countryCode": "AU"
+  },
+  {
+    "id": "c2c4466f-7da6-473e-ae51-ecccdb9f31b4",
+    "name": "Be Fit Foods",
+    "categories": [
+      "dining"
+    ],
+    "description": "Be Fit Food's home-delivered meal programs have been created with the philosophy that food is the first medicine. They use dietary science and real food to create delicious, nutritionally-complete, healthy meals that can help anyone achieve rapid, sustainable weight loss. You don't need medicine or fad diets to lose weight, you just need to eat yourself better.",
+    "shortDescription": null,
+    "redemptionInstructions": [],
+    "countryCodes": [
+      "AU"
+    ],
+    "currency": "AUD",
+    "deliveryMethod": "email",
+    "redemptionChannel": "redeem_online",
+    "markup": {
+      "type": "percentage",
+      "value": 0
+    },
+    "margin": {
+      "type": "percentage",
+      "value": 0.032
+    },
+    "maxDiscountPercentage": 0,
+    "denominations": [
+      50,
+      100,
+      150,
+      200
+    ],
+    "displayTypes": [
+      "digital"
+    ],
+    "type": "digital",
+    "active": true,
+    "approved": true,
+    "createdAt": "2025-07-18T05:53:10.593Z",
+    "supplierDenominations": {
+      "fixed": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ]
+    },
+    "supplier": "merit",
+    "validityInDays": 1095,
+    "countryCode": "AU"
+  },
+  {
+    "id": "ce8de956-4df1-4fda-906d-6afc64d98f64",
+    "name": "Freedom",
+    "categories": [
+      "home_and_garden"
+    ],
+    "description": "The freedom Gift Card is the perfect present for any occasion: birthdays, weddings, anniversaries, housewarmings, or as a unique way to say thank you to clients staff and family.\n\nA freedom Gift Card offers redemption on an extensive collection of home furniture, with a range of outdoor and indoor furniture to suit any taste and style.\n\nFrom freedom you can choose to redeem egift cards on furniture and home accessories for the living room, bedroom, kitchen and dining rooms plus a large range of home decor for outdoor living. Small details can take a home from a place you live in to a place you love coming home to. Whether you’re moving in or redecorating freedom has a massive range of products including wall decor, cushions, throws, mirrors, beds frames, dining chairs, office chairs and much more. A gift voucher from freedom can to help find fresh, inspiring ways to make the most of a space.",
+    "shortDescription": null,
+    "redemptionInstructions": [],
+    "countryCodes": [
+      "AU"
+    ],
+    "currency": "AUD",
+    "deliveryMethod": "email",
+    "redemptionChannel": "redeem_at_store",
+    "markup": {
+      "type": "percentage",
+      "value": 0
+    },
+    "margin": {
+      "type": "percentage",
+      "value": 0.056
+    },
+    "maxDiscountPercentage": 0,
+    "denominations": [
+      15,
+      30,
+      50,
+      75,
+      100,
+      500
+    ],
+    "displayTypes": [
+      "digital"
+    ],
+    "type": "digital",
+    "active": true,
+    "approved": true,
+    "createdAt": "2025-07-18T05:53:10.595Z",
+    "supplierDenominations": {
+      "fixed": [
+        15,
+        30,
+        50,
+        75,
+        100,
+        250,
+        500
+      ]
+    },
+    "supplier": "merit",
+    "validityInDays": 1095,
+    "countryCode": "AU"
+  },
+  {
+    "id": "b5a96582-7c53-426d-8e5d-5bb2f52198e6",
+    "name": "Best Beauty & Wellness",
+    "categories": [
+      "beauty_and_health"
+    ],
+    "description": "Easy to buy, send and redeem, a BEST Spas & Beauty eGift Cards allows the choice from 430+ participating spas and salons including: Toni&Guy, Ella Rouge, Ella Bache, Australian Skin Clinics, Golden Door and many more. Looking for a special gift for her or him? Or maybe you want to treat yourself and your other half? With the BEST Spas & Beauty eGift Card, you have the opportunity to create a unique gift for any occasion; birthdays, Christmas, anniversaries, weddings, corporate incentives and rewards. A BEST Spas & Beauty eGift Card is the ultimate gift of relaxation, beauty and wellness, give them a gift they’ll love.",
+    "shortDescription": null,
+    "redemptionInstructions": [],
+    "countryCodes": [
+      "AU"
+    ],
+    "currency": "AUD",
+    "deliveryMethod": "email",
+    "redemptionChannel": "redeem_online_and_instore",
+    "markup": {
+      "type": "percentage",
+      "value": 0
+    },
+    "margin": {
+      "type": "percentage",
+      "value": 0.028
+    },
+    "maxDiscountPercentage": 0,
+    "denominations": [
+      25,
+      50,
+      100,
+      150,
+      200,
+      500
+    ],
+    "displayTypes": [
+      "digital"
+    ],
+    "type": "digital",
+    "active": true,
+    "approved": true,
+    "createdAt": "2025-07-18T05:53:10.792Z",
+    "supplierDenominations": {
+      "fixed": [
+        25,
+        50,
+        100,
+        150,
+        200,
+        250,
+        500
+      ]
+    },
+    "supplier": "merit",
+    "validityInDays": 1095,
+    "countryCode": "AU"
+  }
+]

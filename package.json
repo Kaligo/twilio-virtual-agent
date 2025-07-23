@@ -10,12 +10,16 @@
     "deploy-raw": "twilio serverless:deploy --override-existing-project",
     "dev": "twilio-run --live",
     "logs": "twilio serverless:logs --service-sid ZSc40977817f55f8bdc3c5501924d1a2bb --environment dev --tail",
-    "try-conversation": "node src/scripts/test-ai-response.js",
-    "test-openai": "node src/scripts/test-openai-key.js"
+    "try-conversation": "node src/scripts/compress-knowledge-base.js && node src/scripts/test-ai-response.js",
+    "test-openai": "node src/scripts/test-openai-key.js",
+    "test-mongodb": "node src/scripts/test-mongodb.js",
+    "test-zendesk": "node src/scripts/test-zendesk.js"
   },
   "dependencies": {
     "dotenv": "^17.2.0",
-    "openai": "^4.20.1"
+    "openai": "^4.20.1",
+    "mongodb": "^6.3.0",
+    "node-zendesk": "^6.0.1"
   },
   "devDependencies": {
     "twilio-run": "^3.4.0"
@@ -28,7 +32,11 @@
     "serverless",
     "openai",
     "virtual-agent",
-    "voice"
+    "voice",
+    "conversational-intelligence",
+    "transcript",
+    "mongodb",
+    "zendesk"
   ],
   "author": "",
   "license": "MIT"
