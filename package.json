@@ -22,7 +22,7 @@
     "node-zendesk": "^6.0.1"
   },
   "devDependencies": {
-    "twilio-run": "^3.4.0"
+    "twilio-run": "^5.0.1"
   },
   "engines": {
     "node": ">=18"
